@@ -1,10 +1,15 @@
-import image from './logo.png'
+import image from "./logo.png";
+import { RiSearch2Line } from "react-icons/ri";
+import { IoLogInOutline } from "react-icons/io5";
+
 function NavBar() {
 	return (
 		<div className='navbar'>
 			<div className='logo'>
-                    <img src={image} alt='logo'/>
-					<h1> H<span>ealthCology</span></h1>
+				<img src={image} alt='logo' />
+				<h1>
+					H<span>ealthCology</span>
+				</h1>
 			</div>
 			<div>
 				<ul className='menu'>
@@ -15,13 +20,25 @@ function NavBar() {
 						<li>
 							<a href='/trips'>About</a>
 						</li>
-                        <li>
+						<li>
 							<a href='/trips'>Contact</a>
 						</li>
 					</div>
 					<li>
+						<div className='search-bar'>
+							<input
+								className='input-field'
+								type='text'
+								placeholder='Search .....'
+							/>
+							<button className='search-icon'>
+								<RiSearch2Line style={{ color: "white", fontSize: "25px" }} />
+							</button>
+						</div>
+					</li>
+					<li>
 						<a href='/login'>
-							<span> Login </span>
+							<span> <IoLogInOutline style={{ fontSize: "25px"}}/> <p> Login </p></span>
 						</a>
 					</li>
 				</ul>
