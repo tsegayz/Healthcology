@@ -23,60 +23,227 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 130px 0 0;
-
 }
 .menu {
+	z-index: 9999;
+
 	list-style: none;
 	display: flex;
 }
 .menu .menu-left {
-  display: flex;
-  margin-right: 50em;
+	display: flex;
+	margin-right: 30em;
 }
-
 .menu li {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	z-index: 9999;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	margin: 0 20px;
-	padding: 25px 0px;
-	padding-top: 90px;
+	padding-top: 88px;
 }
 .menu li a {
-	color: #016e96e3;
+	color: #ffffffe3;
 	text-decoration: none;
 	text-align: center;
 	font-size: 22px;
+	display: flex;
 	position: relative;
 }
+.menu li a span p {
+	margin: 10px;
+}
 .menu li a span {
-	padding: 10px 35px;
 	color: white;
-	font-size: 20px;
-	background-color: #0ba2d4e3;
-	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	font-size: 22px;
+	background-color: rgb(56, 87, 133);
+	border-radius: 0 30px 30px 30px;
+	padding: 0 20px;
 }
 .menu li a span:hover {
 	color: white;
 	transition: all 0.4s;
 	background-color: #0ba2d4af;
 }
-
 .logo {
+	z-index: 9999;
 	display: flex;
 	align-items: start;
 	margin-left: 140px;
-  font-family: 'Lucida Sans',Geneva, Verdana, sans-serif;
+	font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
 	padding: 0;
 	color: #0ba2d4e3;
 }
 .logo h1 {
-  margin-left: -38px;
-  padding-top: 43px;
-	font-size: 47px;
+	margin-left: -33px;
+	padding-top: 41px;
+	font-size: 38px;
 }
-.logo span{
-	font-size: 32px;
+.logo span {
+	font-size: 25px;
 }
 .logo img {
-  height:120px;
-  width:120px;
+	height: 100px;
+	width: 100px;
+}
+.search-bar {
+	width: 100%;
+	background-color: rgb(56, 87, 133);
+	display: flex;
+	align-items: center;
+	border-radius: 40px;
+	margin-bottom: 7px;
+}
+
+.search-bar input {
+	background: transparent;
+	flex: 1;
+	outline: none;
+	font-size: 20px;
+	border: 0;
+	padding: 0 20px;
+}
+::placeholder {
+	color: rgb(255, 255, 255);
+	font-size: 20px;
+}
+
+.search-bar button {
+	border: 0;
+	border-radius: 50%;
+	width: 50px;
+	height: 45px;
+	background: transparent;
+	cursor: pointer;
+}
+
+/* ///////////////  HOME PAGE ///////////////// */
+.home .start{
+	height: 90vh;
+	border-bottom-left-radius: 200px;
+}
+.home .start {
+    height: 90vh;
+    border-bottom-left-radius: 200px;
+    position: relative; 
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+	border-radius: 0 0 0 250px;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 45, 97, 0.884);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+	border-radius: 0 0 0 250px;
+}
+
+.home .home-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 20px;
+}
+
+.home .first-col {
+	z-index: 9999;
+	padding-left: 250px;
+	flex: 1;
+	color: white;
+	margin-top: -200px;
+}
+.home .first-col h1 {
+	font-weight: bold;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	font-size: 60px;
+	text-align: start;
+	width: 7em;
+	color: white;
+}
+.home .first-col p {
+	font-size: 18px;
+	text-align: start;
+	width: 38em;
+}
+.home .first-col a {
+	color: white;
+	text-decoration: none;
+}
+.home .first-col a span {
+	color: rgb(0, 0, 0);
+	width: 12em;
+	height: 2.4em;
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+	font-weight: 100;
+	background-color: rgb(255, 255, 255);
+	border-radius: 0 30px 30px 30px;
+	padding: 5px 30px;
+}
+.home .first-col a span:hover {
+	color: white;
+	transition: all 0.4s;
+	background-color: #0ba2d4af;
+}
+
+.home .second-col {
+	z-index: 2;
+	flex: 1;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.home .second-col .image-container {
+    position: relative; 
+    width: 19em;
+    height: 30em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+	margin-top: -150px;
+    padding: 20px 25px; 
+    border: 3px white solid;
+    border-radius: 150px 0 150px 150px; 
+}
+.home .second-col .image-container-sec {
+    position: relative; 
+    width: 19em;
+    height: 30em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 10px ;
+	margin-top: 150px;
+    padding: 20px 25px; 
+    border: 3px white solid;
+    border-radius: 150px 150px 150px 0; 
+}
+
+.home .second-col .first img {
+	width: 19em;
+    height: 30em;
+	object-fit: cover;
+    object-position: center;
+    border-radius: 150px 0 150px 150px; 
+}
+
+.home .second-col .second img {
+	width: 19em;
+    height: 30em;
+	object-fit: cover;
+    object-position: center;
+    border-radius: 150px 150px 150px 0; 
 }
