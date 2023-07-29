@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import footerList from "./components/db.json";
+
 import Home from "./components/Home";
 import Login from "./components/Login";
 
@@ -10,7 +12,7 @@ function App() {
 				<div className='content'>
 					<Switch>
 						<Route exact path='/'>
-							<Home />
+							<Home footer={footerList} />
 						</Route>
 						<Route exact path='/login'>
 							<Login />

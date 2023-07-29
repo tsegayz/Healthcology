@@ -1,0 +1,39 @@
+[
+	{
+		"id": 2,
+		"title": " Contact us",
+		"list": " email@gmail.com ",
+		"listT": " Lesetho street",
+		"listTh": "Socials",
+		"listF": "Guide",
+		"listTh": "Message"
+	},
+	{
+		"id": 2,
+		"title": " About Healthcology",
+		"list": " what we offer ",
+		"listT": " How we work",
+		"listTh": "services",
+		"listF": "where",
+		"listF": "Guide",
+		"listTh": "Contact us"
+	},
+	{
+		"id": 3,
+		"title": "Explore",
+		"list": "  Write a review ",
+		"listT": "Join",
+		"listTh": "Travelers' Choice",
+		"listF": "Travel Articles",
+		"listF": "Guide",
+		"listTh": "Contact us"
+	},
+	{
+		"id": 4,
+		"title": "News Room",
+		"list": " Medical inventions",
+		"listT": "Health insurances",
+		"listTh": "New medications",
+		"listF": "Findings on diseases"
+	}
+]

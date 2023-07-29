@@ -24,6 +24,7 @@ body {
 	justify-content: space-between;
 	padding: 0 130px 0 0;
 }
+
 .menu {
 	z-index: 9999;
 
@@ -63,7 +64,7 @@ body {
 .menu li a span:hover {
 	color: white;
 	transition: all 0.4s;
-	background-color: #0ba2d4af;
+	background-color: rgba(56, 87, 133, 0.767);
 }
 .logo {
 	z-index: 9999;
@@ -72,7 +73,7 @@ body {
 	margin-left: 140px;
 	font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
 	padding: 0;
-	color: #0ba2d4e3;
+	color: rgb(50, 96, 160);
 }
 .logo h1 {
 	margin-left: -33px;
@@ -118,35 +119,35 @@ body {
 }
 
 /* ///////////////  HOME PAGE ///////////////// */
-.home .start{
+.home .start {
 	height: 90vh;
 	border-bottom-left-radius: 200px;
 }
 .home .start {
-    height: 90vh;
-    border-bottom-left-radius: 200px;
-    position: relative; 
+	height: 90vh;
+	border-bottom-left-radius: 200px;
+	position: relative;
 }
 
 .background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
 	border-radius: 0 0 0 250px;
 }
 
 .overlay {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(11, 45, 97, 0.884);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; 
+	width: 100%;
+	height: 100%;
+	background-color: rgba(11, 45, 97, 0.884);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
 	border-radius: 0 0 0 250px;
 }
 
@@ -166,7 +167,7 @@ body {
 }
 .home .first-col h1 {
 	font-weight: bold;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	margin: 0;
 	font-size: 60px;
 	text-align: start;
@@ -196,8 +197,8 @@ body {
 }
 .home .first-col a span:hover {
 	color: white;
-	transition: all 0.4s;
-	background-color: #0ba2d4af;
+	transition: all 0.5s;
+	background-color: rgb(56, 87, 133);
 }
 
 .home .second-col {
@@ -210,40 +211,447 @@ body {
 }
 
 .home .second-col .image-container {
-    position: relative; 
-    width: 19em;
-    height: 30em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 10px;
+	position: relative;
+	width: 19em;
+	height: 30em;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	margin: 10px;
 	margin-top: -150px;
-    padding: 20px 25px; 
-    border: 3px white solid;
-    border-radius: 150px 0 150px 150px; 
+	padding: 20px 25px;
+	border: 3px white solid;
+	border-radius: 150px 0 150px 150px;
 }
 .home .second-col .image-container-sec {
-    position: relative; 
-    width: 19em;
-    height: 30em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 10px ;
+	position: relative;
+	width: 19em;
+	height: 30em;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	margin: 10px;
 	margin-top: 150px;
-    padding: 20px 25px; 
-    border: 3px white solid;
-    border-radius: 150px 150px 150px 0; 
+	padding: 20px 25px;
+	border: 3px white solid;
+	border-radius: 150px 150px 150px 0;
 }
-
 .home .second-col .first img {
 	width: 19em;
-    height: 30em;
+	height: 30em;
 	object-fit: cover;
-    object-position: center;
-    border-radius: 150px 0 150px 150px; 
+	object-position: center;
+	border-radius: 150px 0 150px 150px;
 }
-
 .home .second-col .second img {
 	width: 19em;
-    height: 30em;
+	height: 30em;
 	object-fit: cover;
-    object-position: center;
-    border-radius: 150px 150px 150px 0; 
+	object-position: center;
+	border-radius: 150px 150px 150px 0;
+}
+.main-content .services {
+	margin: 0 250px;
+	margin-top: 180px;
+	display: flex;
+	justify-content: space-around;
+}
+.main-content .services .list-container {
+	color: rgb(11, 45, 97);
+	width: 22em;
+	background-color: rgba(186, 196, 209, 0.219);
+	border-radius: 15px;
+	padding: 50px 30px;
+}
+.main-content .services .list-container h2 {
+	font-size: 27px;
+	padding: 0;
+}
+
+.services .list-container .icon-container {
+	background-color: rgb(243, 243, 243);
+	width: 48px;
+	height: 48px;
+	padding-top: 9px;
+	margin-left: 4.2em;
+	font-size: 30px;
+	border-radius: 50%;
+}
+
+.section-two {
+	margin: 0 20em;
+	margin-top: 200px;
+	display: flex;
+	align-items: flex-start;
+}
+.part-one {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.section-two .part-one img {
+	width: 21em;
+	height: 30em;
+	object-fit: cover;
+	border-radius: 60px;
+	border: 5px rgb(236, 236, 236) solid;
+	margin-bottom: 10px;
+}
+.part-one .image-container-two {
+	margin-top: -17em;
+	margin-right: -18em;
+}
+.part-two {
+	margin-left: 230px;
+	text-align: start;
+}
+.part-two .first-para {
+	padding-left: 60px;
+	color: rgb(40, 131, 126);
+	position: relative;
+}
+.part-two .first-para::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 50px;
+	height: 3px;
+	background-color: rgb(40, 131, 126);
+	transform: translateY(-50%);
+	z-index: -1;
+}
+.part-two h3 {
+	font-size: 30px;
+	font-family: "Trebuchet MS", sans-serif;
+	width: 15em;
+}
+.part-two p {
+	width: 32em;
+	font-size: 20px;
+}
+.part-two .services-item {
+	display: flex;
+	margin-top: 90px;
+}
+.part-two .services-item .item-container {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-right: 60px;
+}
+.part-two .services-item .item-container h2 {
+	margin: 0;
+	font-size: 20px;
+	padding-top: 10px;
+	font-family: sans-serif;
+}
+.part-two .services-item .item-container .icon-container {
+	font-size: 40px;
+	color: rgb(56, 189, 160);
+	width: 60px;
+	height: 60px;
+	padding-top: 10px;
+	padding-left: 12px;
+	border-radius: 50%;
+	background-color: rgb(243, 243, 243);
+}
+.part-two .services-item .item-container p {
+	width: 13em;
+	margin-top: 10px;
+	text-align: center;
+}
+.section-three {
+	background-color: rgba(161, 185, 221, 0.568);
+	margin: 150px 0 50px;
+	padding: 30px 300px;
+	padding-bottom: 110px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.section-three p {
+	color: rgba(13, 52, 112, 0.952);
+	font-size: 18px;
+}
+
+.section-three h2 {
+	margin-top: 0px;
+	margin-bottom: 70px;
+	font-size: 38px;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+	text-align: center;
+	width: 15em;
+}
+.section-three .education {
+	display: flex;
+}
+
+.section-three .education .education-container {
+	padding: 10px 24px;
+	margin-right: 40px;
+	width: 250px;
+	height: 190px;
+	border-radius: 20px;
+	background-color: white;
+}
+
+.section-three .education .education-container .icon {
+	color: rgba(16, 49, 97, 0.877);
+	font-size: 35px;
+	margin: 0;
+	margin-top: 40px;
+	margin-left: 70px;
+	background-color: rgba(210, 221, 238, 0.568);
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	padding-top: 10px;
+}
+.section-three .education .education-container h5 {
+	font-size: 22px;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+	margin: 0;
+	width: 200px;
+	margin-top: 18px;
+}
+.section-three .part-two {
+	display: flex;
+	margin-top: 30px;
+	margin-right: 16.7em;
+	width: 88em;
+}
+.section-three .part-two .first-col {
+	margin: 0;
+	padding-left: 50px;
+}
+
+.section-three .part-two .first-col h3 {
+	color: rgb(10, 41, 87);
+	font-size: 28px;
+	margin-bottom: 10px;
+}
+.section-three .part-two .first-col p {
+	width: 32em;
+	font-size: 20px;
+}
+.section-three .part-two .first-col a span {
+	margin-top: 30px;
+	border-radius: 50px;
+	color: white;
+	padding: 25px 30px;
+	background-color: rgba(10, 55, 122, 0.774);
+}
+.section-three .part-two .first-col a span h3 {
+	font-size: 21px;
+	color: white;
+	margin: 0px;
+}
+
+.footer {
+	height: 25em;
+	position: relative;
+	margin-top: 10em;
+}
+.footer::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(11, 45, 97, 0.842);
+	z-index: 1;
+	border-top-right-radius: 150px;
+}
+.footer-back {
+	width: 100%;
+	height: 25em;
+	display: block;
+	object-fit: cover;
+	border-top-right-radius: 150px;
+}
+.logo-bottom-one {
+	z-index: 9999;
+	display: flex;
+	align-items: start;
+	font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
+	color: #0ba2d4e3;
+	padding-top: 2.5em;
+}
+.logo-bottom-one h1 {
+	margin-left: -33px;
+	padding-top: 41px;
+	font-size: 38px;
+}
+.logo-bottom-one span {
+	font-size: 25px;
+}
+.logo-bottom-one img {
+	height: 100px;
+	width: 100px;
+}
+.logo-one .input-container p {
+	margin-top: -10px;
+	font-size: 18px;
+	width: 21em;
+}
+.logo-one .input-container input {
+	height: 40px;
+	border: none;
+	font-size: 17px;
+	padding-left: 8px;
+}
+.logo-one .input-container ::placeholder {
+	color: #000000;
+	font-size: 16px;
+}
+.logo-one .input-container button {
+	font-size: 18px;
+	padding: 0 20px;
+	height: 39px;
+	color: white;
+	border: none;
+	background-color: rgb(56, 87, 133);
+}
+.logo-bottom {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	display: flex;
+	justify-content: space-around;
+	font-size: 25px;
+	color: #000000;
+	text-align: start;
+	margin-top: 20px;
+}
+.logo-bottom h6 {
+	color: white;
+	font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-size: 30px;
+	font-weight: 100;
+	margin-bottom: 0;
+	z-index: 9999;
+}
+
+.logo-bottom p {
+	font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
+	color: white;
+	margin: 10px 0;
+	font-size: 16px;
+}
+
+/* //////////////////// LOGIN PAGE //////////////// */
+.login {
+	margin-left: 180px;
+	padding-top: 50px;
+	display: flex;
+}
+.login .part-one {
+	padding: 0;
+	padding-left: 0px;
+}
+.login .part-one .container .image-container {
+	width: 62em;
+	height: 45em;
+	margin-left: 10px;
+	margin-top: -60px;
+	margin-right: -60px;
+}
+
+.login .part-one .container .image-container img {
+	width: 100%;
+	height: 100%;
+}
+.login .part-two {
+	background-color: aliceblue;
+	width: 25em;
+	margin-left: 180px;
+	height: 43.5em;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 1b5em;
+	padding-top: 25px;
+	margin-top: 90px;
+	position: relative;
+}
+.login .part-two img {
+	width: 65em;
+	margin-top: -17em;
+	margin-left: -28em;
+}
+
+.login .part-two .content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	margin-right: 120px;
+	/* padding-left: -50px; */
+	padding-top: 70px;
+	margin-left: -90px;
+}
+.login .part-two .content .form {
+	display: flex;
+	flex-direction: column;
+	margin-right: 120px;
+}
+.login .part-two .content h1 {
+	font-size: 35px;
+	font-weight: 100;
+	color: rgb(27, 61, 110);
+}
+.login .part-two .user-input-container,
+.login .part-two .password-input-container {
+	position: relative;
+	display: inline-block;
+	border: 2px solid #c2bfbfb6;
+	border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 20px;
+}
+.login .part-two input::placeholder {
+	color: transparent;
+}
+.login .part-two input {
+	border: none;
+	outline: none;
+	font-size: 16px;
+	padding: 5px;
+	background: transparent;
+	z-index: 2;
+}
+
+.login .part-two label {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	transform: translateY(-50%);
+	padding: 0 5px;
+	z-index: 1;
+	color: #5f5f5f;
+	font-size: 18px;
+	transition: top 0.3s ease-out, left 0.3s ease-out, font-size 0.3s ease-out,
+		color 0.3s ease-out;
+}
+
+.login .part-two input:focus + label,
+.login .part-two input:not(:placeholder-shown) + label {
+	top: -10px;
+	left: 10px;
+	font-size: 12px;
+	color: #555;
+}
+.login .part-two .content .form button {
+	border-radius: 50px;
+	background-color: rgb(27, 61, 110);
+	padding: 12px 0;
+	font-size: 20px;
+	color: white;
+	border: none;
+}
+.login .part-two .content .form h3 {
+	font-size: 16px;
+	font-weight: 100;
+	color: rgb(27, 61, 110);
 }
