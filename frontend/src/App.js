@@ -4,6 +4,7 @@ import footerList from "./components/db.json";
 
 import Home from "./components/Home";
 import Login from "./components/Login";
+import Education from "./components/Educational/education"
 
 function App() {
 	return (
@@ -16,6 +17,9 @@ function App() {
 						</Route>
 						<Route exact path='/login'>
 							<Login />
+						</Route>
+						<Route exact path='/education'>
+							<Education/>
 						</Route>
 					</Switch>
 				</div>

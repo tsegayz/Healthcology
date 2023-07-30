@@ -18,10 +18,10 @@ function NavBar() {
 							<a href='/'>Home</a>
 						</li>
 						<li>
-							<a href='/trips'>About</a>
+							<a href='/about'>About</a>
 						</li>
 						<li>
-							<a href='/trips'>Contact</a>
+							<a href='/contact'>Contact</a>
 						</li>
 					</div>
 					<li>

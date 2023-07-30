@@ -25,16 +25,19 @@ function Home({ footer }) {
 		{
 			icon: <GiMicroscope />,
 			title: "Learning page",
+			link: "./education",
 			desc: "Login/Signup as a student and exploit all the benefits you encounter",
 		},
 		{
 			icon: <FaClockRotateLeft />,
 			title: "Access near",
+			link: "./near",
 			desc: "Login/Signup as a normal user and access search for the nearby hospitals and pharmacy",
 		},
 		{
 			icon: <SiWpexplorer />,
 			title: "Explore about us",
+			link: "./about",
 			desc: "Any questions? Then find out more about us on our page ",
 		},
 	];
@@ -153,11 +156,13 @@ function Home({ footer }) {
 				<div className='services'>
 					{services.map((value) => {
 						return (
-							<div className='list-container'>
-								<div className='icon-container'> {value.icon}</div>
-								<h2> {value.title} </h2>
-								<p> {value.desc} </p>
-							</div>
+							<a href={value.link}>
+								<div className='list-container'>
+									<div className='icon-container'> {value.icon}</div>
+									<h2> {value.title} </h2>
+									<p> {value.desc} </p>
+								</div>
+							</a>
 						);
 					})}
 				</div>
