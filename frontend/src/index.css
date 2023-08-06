@@ -381,7 +381,7 @@ body {
 	margin-top: 10px;
 	text-align: center;
 }
-.section-three {
+.home .section-three {
 	background-color: rgba(161, 185, 221, 0.568);
 	margin: 150px 0 50px;
 	padding: 30px 300px;
@@ -390,12 +390,12 @@ body {
 	flex-direction: column;
 	align-items: center;
 }
-.section-three p {
+.home .section-three p {
 	color: rgba(13, 52, 112, 0.952);
 	font-size: 18px;
 }
 
-.section-three h2 {
+.home .section-three h2 {
 	margin-top: 0px;
 	margin-bottom: 70px;
 	font-size: 38px;
@@ -403,11 +403,11 @@ body {
 	text-align: center;
 	width: 15em;
 }
-.section-three .education {
+.home .section-three .education {
 	display: flex;
 }
 
-.section-three .education .education-container {
+.home .section-three .education .education-container {
 	padding: 10px 24px;
 	margin-right: 40px;
 	width: 250px;
@@ -416,7 +416,7 @@ body {
 	background-color: white;
 }
 
-.section-three .education .education-container .icon {
+.home .section-three .education .education-container .icon {
 	color: rgba(16, 49, 97, 0.877);
 	font-size: 35px;
 	margin: 0;
@@ -428,41 +428,41 @@ body {
 	height: 60px;
 	padding-top: 10px;
 }
-.section-three .education .education-container h5 {
+.home .section-three .education .education-container h5 {
 	font-size: 22px;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	margin: 0;
 	width: 200px;
 	margin-top: 18px;
 }
-.section-three .part-two {
+.home .section-three .part-two {
 	display: flex;
 	margin-top: 30px;
 	margin-right: 16.7em;
 	width: 88em;
 }
-.section-three .part-two .first-col {
+.home .section-three .part-two .first-col {
 	margin: 0;
 	padding-left: 50px;
 }
 
-.section-three .part-two .first-col h3 {
+.home .section-three .part-two .first-col h3 {
 	color: rgb(10, 41, 87);
 	font-size: 28px;
 	margin-bottom: 10px;
 }
-.section-three .part-two .first-col p {
+.home .section-three .part-two .first-col p {
 	width: 32em;
 	font-size: 20px;
 }
-.section-three .part-two .first-col a span {
+.home .section-three .part-two .first-col a span {
 	margin-top: 30px;
 	border-radius: 50px;
 	color: white;
 	padding: 25px 30px;
 	background-color: rgba(10, 55, 122, 0.774);
 }
-.section-three .part-two .first-col a span h3 {
+.home .section-three .part-two .first-col a span h3 {
 	font-size: 21px;
 	color: white;
 	margin: 0px;
@@ -701,6 +701,9 @@ body {
 }
 
 /* /////////// education page ////////////// */
+.education-page {
+	background-color: #f9fdff;
+}
 .education-page .menu-left {
 	margin-right: 41em;
 }
@@ -784,22 +787,25 @@ body {
 	margin-left: 200px;
 }
 .education-page .second-col img {
-	border-radius: 0  0 28em 23em;
+	border-radius: 0 0 25em 25em;
 	height: 40em;
-	margin-top: 2px;
+	margin-top: -17.3em;
+	position: absolute;
+	z-index: 5;
 }
 .circle {
 	width: 30em;
 	height: 30em;
 	border-radius: 50%;
 	position: absolute;
-	z-index: -1;
+	z-index: 1;
 }
 
 .circle.circle-1 {
 	border: 3px gold solid;
 	top: 21.1em;
 	left: 71em;
+	box-shadow: 0 10px 20px 15px rgba(184, 212, 255, 0.384);
 }
 
 .circle.circle-2 {
@@ -810,32 +816,33 @@ body {
 	height: 27em;
 }
 
-.education-page .second-col .first .image-container span{
+.education-page .second-col .first .image-container span {
 	position: absolute;
 	background-color: rgb(247, 247, 247);
 	border-radius: 30px;
 	display: flex;
 	align-items: center;
-	right: 18em;
+	right: 16em;
 	top: 220px;
 	width: 12em;
 	padding: 10px;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	z-index: 7;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	box-shadow: 0 2px 20px 15px rgba(37, 37, 37, 0.1);
 }
-.education-page .second-col .first .image-container span h4{
+.education-page .second-col .first .image-container span h4 {
 	margin: 0;
 	margin-top: 10px;
 	color: rgb(10, 55, 122);
 	font-size: 30px;
 }
-.education-page .second-col .first .image-container span p{
+.education-page .second-col .first .image-container span p {
 	margin: 0;
 	font-size: 18px;
 	color: rgb(2, 37, 90);
 }
 
-.education-page .second-col .first .image-container .span{
+.education-page .second-col .first .image-container .span {
 	position: absolute;
 	background-color: rgb(247, 247, 247);
 	border-radius: 30px;
@@ -845,17 +852,223 @@ body {
 	top: 42em;
 	width: 11em;
 	padding: 10px;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	box-shadow: 0 2px 20px 15px rgba(37, 37, 37, 0.1);
 }
-.education-page .second-col .first .image-container .span h4{
+.education-page .second-col .first .image-container .span h4 {
 	margin: 0;
 	margin-top: 10px;
 	color: rgb(10, 55, 122);
 	font-size: 30px;
 }
-.education-page .second-col .first .image-container .span p{
+.education-page .second-col .first .image-container .span p {
 	margin: 0;
 	font-size: 18px;
 	color: rgb(2, 37, 90);
+}
+.education-page .section-two {
+	margin: 20px;
+	margin-top: 200px;
+	margin-left: 15em;
+}
+.education-page .section-two .part-one {
+	display: flex;
+	flex-direction: row;
+	margin-right: -100px;
+}
+.education-page .section-two .part-one .card-container {
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 2px 20px 15px rgba(216, 233, 255, 0.329);
+	margin-right: 70px;
+	width: 300px;
+	height: 20em;
+	border-radius: 20px;
+	padding-top: 30px;
+	text-align: start;
+	padding-left: 25px;
+}
+.education-page .section-two .part-one .card-container span {
+	font-size: 40px;
+	color: white;
+	border-radius: 50%;
+	padding: 5px 10px;
+	padding-top: 10px;
+	background-color: rgba(0, 55, 127, 0.863);
+}
+.education-page .section-two .part-one .card-container h4 {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+	font-size: 20px;
+	margin-bottom: 0;
+}
+.education-page .section-two .part-one .card-container p {
+	width: 280px;
+	padding: 0 14px;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.education-page .section-two .part-one .card-container button {
+	background-color: rgba(0, 55, 127, 0.863);
+	border: none;
+	border-radius: 50%;
+	margin-top: 20px;
+	margin-left: 200px;
+	font-size: 25px;
+	padding-top: 5px;
+	color: white;
+}
+.education-page .section-two .part-two h3 {
+	font-size: 40px;
+	width: 10em;
+}
+.education-page .section-two .part-two p {
+	width: 25em;
+	margin-bottom: 0;
+}
+.education-page .section-three {
+	display: flex;
+	flex-direction: row;
+	margin: 40px 0;
+	margin-left: 200px;
+	margin-top: 180px;
+}
+.education-page .section-three .card-container {
+	margin: 10px 0px;
+	margin-right: 100px;
+}
+.education-page .section-three .card-container h2 {
+	font-size: 22px;
+	margin: 0;
+}
+.education-page .section-three .card-container p {
+	width: 18em;
+}
+.education-page .section-four {
+	display: flex;
+}
+.education-page .section-four .part-one {
+	margin-top: -5em;
+}
+.education-page .section-four .part-one .content {
+	position: absolute;
+	font-size: 20px;
+	margin: 260px;
+	margin-top: 15em;
+}
+.education-page .section-four .part-two {
+	display: flex;
+	margin-top: 7em;
+	margin-left: 80px;
+}
+.education-page .section-four .part-two .card-container {
+	width: 310px;
+	height: 28em;
+	margin-right: 100px;
+	padding: 0 30px;
+	padding-top: 40px;
+}
+.education-page .section-four .part-two .card-container p {
+	width: 250px;
+}
+.education-page .section-four .part-two .card-0 {
+	border-radius: 20px;
+	background: linear-gradient(to bottom right, rgba(161, 222, 250, 0.301) , rgb(0, 131, 219) );
+	z-index: 5;
+	text-align: center;
+	box-shadow: 0 1px 30px 15px rgba(238, 238, 238, 0.329);
+  }
+  
+.education-page .section-four .part-two .card-container h2 {
+	font-size: 23px;
+	margin-bottom: 40px;
+}
+.education-page .section-four .part-two .card-container p {
+	padding: 0 20px;
+	font-size: 17px;
+	margin-top: 30px;
+}
+.education-page .section-four .part-two .card-0 span {
+	font-size: 30px;
+	background-color: white;
+	padding: 0 10px;
+	padding-top: 8px;
+	border-radius: 13px;
+	color: rgb(2, 42, 95);
+}
+.education-page .section-four .part-two .card-0 button {
+	font-size: 16px;
+	margin-top: 10px;
+	background-color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 20px;
+	color: rgb(2, 42, 95);
+}
+.education-page .section-four .part-two .card-1 {
+	background-color: rgb(255, 255, 255);
+	text-align: center;
+	border-radius: 20px;
+	height: 23em;
+	margin-top: 40px;
+	z-index: 1;
+	margin-left: -125px;
+	box-shadow: 0 1px 30px 15px rgba(199, 199, 199, 0.329);
+}
+.education-page .section-four .part-two .card-1 span {
+	font-size: 30px;
+	background-color: rgb(2, 42, 95);
+	padding: 0 10px;
+	padding-top: 6px;
+	border-radius: 13px;
+	color: white;
+}
+.education-page .section-four .part-two .card-1 button {
+	font-size: 16px;
+	margin-top: 10px;
+	background-color: rgb(2, 42, 95);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 20px;
+	color: white;
+}
+.education-page footer {
+	background-color: rgba(202, 225, 255, 0.384);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.education-page footer .logo{
+	margin-left: -100px;
+}
+.education-page footer .menu-left{
+	margin-left: 40em;
+	font-size: 22px;
+	display: flex;
+	margin-bottom: 1em;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.education-page footer .menu-left li { 
+	padding: 5px 20px;
+}
+.education-page footer .menu-left li a{ 
+	color: rgb(7, 66, 143);
+}
+.education-page footer .socials{
+	font-size: 20px;
+	margin: 10px ;
+}
+.education-page footer .socials span{
+	border-radius: 50%;
+	margin-right: 28px;
+	padding: 7px;
+	padding-top: 12px;
+	padding-right: 10px;
+	color: white;
+	background-color: rgb(2, 42, 95);
+}
+.education-page footer .socials span:hover{
+	color: rgb(2, 42, 95);
+	background-color: white;
+}
+.education-page footer .copyright{
+	color: rgb(7, 66, 143);
+	margin: 10px;
 }
