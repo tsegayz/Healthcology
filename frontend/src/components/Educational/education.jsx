@@ -120,7 +120,7 @@ function education() {
 								<a href='/about'>About</a>
 							</li>
 							<li>
-								<a href='/course'>Courses</a>
+								<a href='/course'>Departement</a>
 							</li>
 							<li>
 								<a href='/contact'>Contact</a>
@@ -129,10 +129,11 @@ function education() {
 						<li style={{ marginBottom: "10px" }}>
 							<div className='search-bar'>
 								<button className='search-icon'>
-									<RiSearch2Line style={{ color: "white", fontSize: "25px" }} />
+									<RiSearch2Line style={{ color: "grey", fontSize: "25px" }} />
 								</button>
 							</div>
 						</li>
+
 						<li>
 							<a href='/login'>
 								<span>
