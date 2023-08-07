@@ -27,13 +27,12 @@ body {
 
 .menu {
 	z-index: 9999;
-
 	list-style: none;
 	display: flex;
 }
 .menu .menu-left {
 	display: flex;
-	margin-right: 30em;
+	margin-right: 26em;
 }
 .menu li {
 	z-index: 9999;
@@ -42,7 +41,6 @@ body {
 	padding-top: 88px;
 	list-style: none;
 	display: inline-block;
-	margin-right: 20px;
 	position: relative;
 }
 .menu li a {
@@ -73,6 +71,7 @@ body {
 	margin: 10px;
 }
 .menu li a span {
+	/* margin-left: 3em; */
 	color: white;
 	display: flex;
 	align-items: center;
@@ -108,35 +107,128 @@ body {
 	width: 100px;
 }
 .search-bar {
+	z-index: 5;
+	position: relative;
 	width: 100%;
-	background-color: rgb(56, 87, 133);
+	background-color: white;
+	color: grey;
 	display: flex;
 	align-items: center;
 	border-radius: 40px;
-	margin-bottom: 7px;
+	margin-top: 86px;
+	transition: width 0.1s, box-shadow 0.3s;
 }
-
+.search-bar:focus-within {
+	width: 34em;
+	border-radius: 6px;
+	background-color: white;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	/* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); */
+}
+.search-bar:focus-within::before {
+	z-index: -1;
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.61); 
+}
 .search-bar input {
 	background: transparent;
 	flex: 1;
+	width: 20em;
 	outline: none;
 	font-size: 20px;
 	border: 0;
 	padding: 0 20px;
+	margin-left: -25px;
+	transition: background-color 0.3s;
 }
 ::placeholder {
-	color: rgb(255, 255, 255);
-	font-size: 20px;
+	color: grey;
+	font-size: 17px;
 }
 
+.menu .background {
+	z-index: 55;
+}
+
+.menu .search-results {
+	z-index: 55;
+}
+.search-container .horizontal-line {
+    display: none;
+    border: none;
+	z-index: 9999;
+	margin: 0 30px;
+    border-top: 5px solid #000000;
+}
+
+.search-container .horizontal-line.active {
+    display: block;
+	z-index: -1;
+
+}
 .search-bar button {
 	border: 0;
 	border-radius: 50%;
-	width: 50px;
-	height: 45px;
+	width: 60px;
+	height: 50px;
 	background: transparent;
 	cursor: pointer;
 }
+.search-results {
+	width: 34em;
+	height: 230px;
+	background-color: white;
+	overflow: hidden;
+	overflow-y: auto;
+	position: absolute;
+	top: 9.6em;
+	right: 13.42em;
+	border-radius: 6px;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+.search-results span a {
+	display: flex;
+	align-items: center;
+	color: black;
+	font-size: 20px;
+	padding: 10px 0;
+	margin: 10px 20px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	border-bottom: rgba(126, 126, 126, 0.541) 1px solid;
+}
+.result-name {
+	display: flex;
+	align-items: center;
+}
+.result-name p {
+	margin: 0;
+	padding: 0;
+	color: black;
+	font-size: 20px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.search-results::-webkit-scrollbar {
+	display: none;
+}
+.search-item {
+	width: 90%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+	margin: 15px 0;
+	margin-left: 20px;
+	border-bottom: rgba(126, 126, 126, 0.541) 1px solid;
+}
+
 
 /* ///////////////  HOME PAGE ///////////////// */
 .home .start {
@@ -970,12 +1062,16 @@ body {
 }
 .education-page .section-four .part-two .card-0 {
 	border-radius: 20px;
-	background: linear-gradient(to bottom right, rgba(161, 222, 250, 0.301) , rgb(0, 131, 219) );
+	background: linear-gradient(
+		to bottom right,
+		rgba(161, 222, 250, 0.301),
+		rgb(0, 131, 219)
+	);
 	z-index: 5;
 	text-align: center;
 	box-shadow: 0 1px 30px 15px rgba(238, 238, 238, 0.329);
-  }
-  
+}
+
 .education-page .section-four .part-two .card-container h2 {
 	font-size: 23px;
 	margin-bottom: 40px;
@@ -1036,27 +1132,27 @@ body {
 	flex-direction: column;
 	align-items: center;
 }
-.education-page footer .logo{
+.education-page footer .logo {
 	margin-left: -100px;
 }
-.education-page footer .menu-left{
+.education-page footer .menu-left {
 	margin-left: 40em;
 	font-size: 22px;
 	display: flex;
 	margin-bottom: 1em;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.education-page footer .menu-left li { 
+.education-page footer .menu-left li {
 	margin: 10px 28px;
 }
-.education-page footer .menu-left li a{ 
+.education-page footer .menu-left li a {
 	color: rgb(2, 42, 95);
 }
-.education-page footer .socials{
+.education-page footer .socials {
 	font-size: 20px;
-	margin: 10px ;
+	margin: 10px;
 }
-.education-page footer .socials span{
+.education-page footer .socials span {
 	border-radius: 50%;
 	margin-right: 28px;
 	padding: 7px 11px;
@@ -1064,16 +1160,16 @@ body {
 	color: white;
 	background-color: rgba(2, 42, 95, 0.836);
 }
-.education-page footer .socials span:hover{
+.education-page footer .socials span:hover {
 	color: rgb(2, 42, 95);
 	background-color: white;
 }
-.education-page footer .copyright{
+.education-page footer .copyright {
 	color: rgb(2, 42, 95);
 	margin: 10px;
 }
 
-.education-page .section-five{
+.education-page .section-five {
 	margin: 20px 370px;
 	margin-bottom: 150px;
 }
@@ -1081,74 +1177,74 @@ body {
 .section-five h2 {
 	margin: 0;
 	margin-bottom: 90px;
-    position: relative;
-    display: inline-block;
-    padding: 0 110px;
+	position: relative;
+	display: inline-block;
+	padding: 0 110px;
 	font-size: 35px;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	color: rgb(1, 29, 65);
 }
 .section-five h2::before,
 .section-five h2::after {
-    content: "";
-    position: absolute;
-    height: 2px;
+	content: "";
+	position: absolute;
+	height: 2px;
 	background-color: rgba(2, 42, 95, 0.836);
-    top: 60%;
-    transform: translateY(-50%);
-    width:100px;
+	top: 60%;
+	transform: translateY(-50%);
+	width: 100px;
 }
 
 .section-five h2::before {
-    left: 0;
+	left: 0;
 }
 
 .section-five h2::after {
-    right: 0;
+	right: 0;
 }
 .education-page .section-five .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 50px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 50px;
 }
 
 .education-page .section-five .offer-item {
-    display: flex;
-    align-items: start;
+	display: flex;
+	align-items: start;
 	border-radius: 20px;
-    justify-content: center;
-    border: 1px solid #000;
-    padding: 20px;
+	justify-content: center;
+	border: 1px solid #000;
+	padding: 20px;
 	box-shadow: 0 1px 15px 10px rgba(238, 238, 238, 0.329);
 	background-color: white;
 	border: none;
 	text-align: start;
 }
 .education-page .section-five .offer-item:hover {
-    background-color: rgba(0, 131, 219, 0.288);
+	background-color: rgba(0, 131, 219, 0.288);
 }
 .education-page .section-five .offer-item span {
-    font-size: 30px;
-    border-radius: 15px;
-    color: white;
-    padding: 5px 8px;
-    padding-top: 8px;
-    margin-right: 40px;
-    background-color: rgb(2, 33, 73);
-    transition: color 0.9s, 
+	font-size: 30px;
+	border-radius: 15px;
+	color: white;
+	padding: 5px 8px;
+	padding-top: 8px;
+	margin-right: 40px;
+	background-color: rgb(2, 33, 73);
+	transition: color 0.9s;
 }
 .education-page .section-five .offer-item:hover span {
-    color: black; 
-    background-color: white; 
+	color: black;
+	background-color: white;
 }
 
-.education-page .section-five .offer-item .offer h3{
+.education-page .section-five .offer-item .offer h3 {
 	margin: 0;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	font-size: 23px;
 }
-.education-page .section-five .offer-item .offer p{
+.education-page .section-five .offer-item .offer p {
 	width: 22em;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	font-size: 17px;
 }
