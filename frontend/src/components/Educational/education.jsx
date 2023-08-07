@@ -20,11 +20,12 @@ import {
 	BsInstagram,
 	BsFacebook,
 	BsWhatsapp,
+	BsQuestionCircleFill,
 } from "react-icons/bs";
 import { GiBookshelf } from "react-icons/gi";
 import { VscNotebook } from "react-icons/vsc";
 import { SlBadge } from "react-icons/sl";
-import { FaGraduationCap } from "react-icons/fa";
+import { FaGraduationCap, FaResearchgate } from "react-icons/fa";
 import { IoPlanetSharp } from "react-icons/io5";
 import { AiFillExperiment } from "react-icons/ai";
 
@@ -75,6 +76,29 @@ function education() {
 			name: "Course questions",
 			icon: <IoStarHalfSharp />,
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, laborum perferendis unde magnam",
+		},
+	];
+
+	const offer = [
+		{
+			icon: <IoMdPerson />,
+			title: "lab Exercises",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ad! Possimus, dolorum. Amet debitis aspernatur aliquam temporibus quidem unde asperior",
+		},
+		{
+			icon: <BsQuestionCircleFill />,
+			title: "Exam questions",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ad! Possimus, dolorum. Amet debitis aspernatur aliquam temporibus quidem unde asperior",
+		},
+		{
+			icon: <VscNotebook />,
+			title: "Course material",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ad! Possimus, dolorum. Amet debitis aspernatur aliquam temporibus quidem unde asperior",
+		},
+		{
+			icon: <FaResearchgate />,
+			title: "Researches ",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ad! Possimus, dolorum. Amet debitis aspernatur aliquam temporibus quidem unde asperior",
 		},
 	];
 	return (
@@ -304,6 +328,23 @@ function education() {
 				</div>
 			</section>
 
+			<section className='section-five'>
+				<h2> What we offer </h2>
+				<div className='grid-container'>
+					{offer.map((item, index) => {
+						return (
+							<div className='offer-item' key={index}>
+								<span> {item.icon} </span>
+								<div className='offer'>
+									<h3> {item.title} </h3>
+									<p> {item.desc} </p>
+								</div>
+							</div>
+						);
+					})}
+				</div>
+			</section>
+
 			<footer>
 				<div className='logo'>
 					<img src={image} alt='logo' />
@@ -326,11 +367,21 @@ function education() {
 					</li>
 				</div>
 				<div className='socials'>
-					<span> <BsTwitter /></span>
-					<span> <BsLinkedin /></span>
-					<span> <BsInstagram /></span>
-					<span> <BsFacebook /></span>
-					<span> <BsWhatsapp /></span>
+					<span>
+						<BsTwitter />
+					</span>
+					<span>
+						<BsLinkedin />
+					</span>
+					<span>
+						<BsInstagram />
+					</span>
+					<span>
+						<BsFacebook />
+					</span>
+					<span>
+						<BsWhatsapp />
+					</span>
 				</div>
 				<div class='copyright'>
 					&copy; Copyright <span>Grace.All Rights Reserved</span>
