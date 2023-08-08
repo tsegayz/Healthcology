@@ -24,6 +24,7 @@ import {
 	BsInstagram,
 	BsFacebook,
 	BsWhatsapp,
+	BsPatchQuestion,
 	BsQuestionCircleFill,
 } from "react-icons/bs";
 import { GiBookshelf } from "react-icons/gi";
@@ -32,6 +33,8 @@ import { TbLocation } from "react-icons/tb";
 import { SlBadge } from "react-icons/sl";
 import { FaGraduationCap, FaResearchgate } from "react-icons/fa";
 import { AiFillExperiment } from "react-icons/ai";
+import { GiMicroscope, GiTestTubes, GiArchiveResearch } from "react-icons/gi";
+import { SiGitbook } from "react-icons/si";
 
 function Education() {
 	const catagory = [
@@ -106,10 +109,10 @@ function Education() {
 		},
 	];
 
+	const [selectedItem, setSelectedItem] = useState(null);
 	const [isSearchActive, setIsSearchActive] = useState(false);
 
 	const data = ["balcha", "sarbet", "pharma", "tarik"];
-	const history = useHistory();
 
 	const [filteredPlaces, setFilteredPlaces] = useState([]);
 	const filterHandler = (e) => {
@@ -121,11 +124,37 @@ function Education() {
 			setFilteredPlaces(data);
 		}
 	};
-
 	const handleItemClick = (item) => {
-		// Navigate to the location page and pass the selected item's data
-		history.push(`/courses/${item._id}`, { itemData: item });
+		setSelectedItem(item);
 	};
+
+	const education = [
+		{
+			id: 1,
+			icon: <SiGitbook />,
+			name: "Departements",
+		},
+		{
+			id: 2,
+			icon: <GiMicroscope />,
+			name: "Courses",
+		},
+		{
+			id: 3,
+			icon: <GiTestTubes />,
+			name: "Lab experiments",
+		},
+		{
+			id: 4,
+			icon: <BsPatchQuestion />,
+			name: "Questions",
+		},
+		{
+			id: 5,
+			icon: <GiArchiveResearch />,
+			name: "Researches",
+		},
+	];
 	return (
 		<div className='education-page'>
 			<div className='navbar'>
@@ -145,76 +174,9 @@ function Education() {
 								<a href='/about'>About</a>
 							</li>
 							<li>
-								<a href='/course'>Departement</a>
-							</li>
-							<li>
 								<a href='/contact'>Contact</a>
 							</li>
 						</div>
-						<div className='search-container'>
-							<div className='search-bar'>
-								<button className='search-icon'>
-									<RiSearch2Line style={{ color: "black", fontSize: "20px" }} />
-								</button>
-								<input
-									className='input-field'
-									type='text'
-									onFocus={() => setIsSearchActive(true)}
-									onBlur={() => setIsSearchActive(false)}
-									onChange={filterHandler}
-									placeholder='Search hospitals, pharmacy .....'
-								/>
-							</div>
-							<hr
-								className={`horizontal-line ${isSearchActive ? "active" : ""}`}
-							/>
-							{isSearchActive && (
-								<div className='search-results'>
-									{filteredPlaces.length === 0 && (
-										<span>
-											<a>
-												<TbLocation
-													style={{
-														fontSize: "30px",
-														padding: "5px",
-														border: "rgb(51, 51, 51) 1px solid",
-														borderRadius: "50%",
-														color: "black",
-														marginRight: "10px",
-													}}
-												/>
-												Nearby
-											</a>
-										</span>
-									)}
-									{filteredPlaces.map((value) => (
-										<a
-											className='search-item'
-											target=''
-											key={value._id}
-											onClick={() => handleItemClick(value)}
-										>
-											<div className='result-name'>
-												<span>
-													<IoLocationOutline
-														style={{
-															fontSize: "30px",
-															padding: "5px",
-															border: "rgb(51, 51, 51) 1px solid",
-															borderRadius: "50%",
-															color: "black",
-															marginRight: "10px",
-														}}
-													/>
-												</span>
-												<p> {value} </p>
-											</div>
-										</a>
-									))}
-								</div>
-							)}
-						</div>
-
 						<li>
 							<a href='/login'>
 								<span>
@@ -226,6 +188,81 @@ function Education() {
 				</div>
 			</div>
 
+			<div className='search-container'>
+				<h1> What do you need?</h1>
+				<div className='category-container'>
+					{education.map((item) => (
+						<div
+							className={`category-map ${
+								selectedItem?.id === item.id ? "selected" : ""
+							}`}
+							key={item.id}
+							onClick={() => handleItemClick(item)}
+						>
+							<span>{item.icon}</span>
+							<p>{item.name}</p>
+						</div>
+					))}
+				</div>
+				<div className='search-bar'>
+					<button className='search-icon'>
+						<RiSearch2Line style={{ color: "black", fontSize: "20px" }} />
+					</button>
+					<input
+						className={`input-field ${isSearchActive ? "active" : ""}`}
+						type='text'
+						onFocus={() => setIsSearchActive(true)}
+						onBlur={() => setIsSearchActive(false)}
+						onChange={filterHandler}
+						placeholder={selectedItem ? selectedItem.name : "Departements"}
+					/>
+				</div>
+				{isSearchActive && (
+					<div className='search-results'>
+						{filteredPlaces.length === 0 && (
+							<span>
+								<a>
+									<TbLocation
+										style={{
+											fontSize: "30px",
+											padding: "5px",
+											border: "rgb(51, 51, 51) 1px solid",
+											borderRadius: "50%",
+											color: "black",
+											marginRight: "10px",
+										}}
+									/>
+									Nearby
+								</a>
+							</span>
+						)}
+						{filteredPlaces.map((value) => (
+							<a
+								className='search-item'
+								target=''
+								key={value._id}
+								onClick={() => handleItemClick(value)}
+							>
+								<div className='result-name'>
+									<span>
+										<IoLocationOutline
+											style={{
+												fontSize: "30px",
+												padding: "5px",
+												border: "rgb(51, 51, 51) 1px solid",
+												borderRadius: "50%",
+												color: "black",
+												marginRight: "10px",
+											}}
+										/>
+									</span>
+									<p> {value} </p>
+								</div>
+							</a>
+						))}
+					</div>
+				)}
+			</div>
 			<section>
 				<div className='home-header'>
 					<div className='first-col'>
@@ -302,8 +339,8 @@ function Education() {
 											borderRadius: "50%",
 											padding: "8px",
 											color: "white",
-											marginTop: "-70px",
-											marginLeft: "-10px",
+											marginTop: "-20px",
+											marginLeft: "0px",
 											marginRight: "-17px",
 										}}
 									/>

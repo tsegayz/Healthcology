@@ -850,14 +850,70 @@ body {
 	background-color: #f9fdff;
 }
 .education-page .menu-left {
-	margin-right: 18em;
+	margin-right: 32em;
 }
+.education-page .menu-left li a {
+	font-size: 19px;
+	margin-top: 5px;
+}
+.category-container{
+	margin: 20px 33em;
+}
+.category-map {
+  display: flex;
+  align-items: center;
+  margin-right: 45px;
+  position: relative;
+}
+
+.category-map span {
+	color: rgba(10, 41, 87, 0.87);
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.category-map p {
+  margin: 0;
+  font-family: 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.category-map::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgba(10, 41, 87, 0.87);
+  transition: width 0.3s ease;
+}
+
+.category-map:hover::before {
+  width: 100%;
+}
+
 .education-page .search-bar {
+	margin-top: 30px;
+	width: 43em;
+	margin-left: 37em;
+	margin-bottom: 5em;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
+.education-page .category-container {
+  display: flex;
+}
+.education-page .search-container h1{
+	font-size: 47px;
+	margin: 0;
+	margin-top: 20px;
+	margin-bottom: 45px;
+	font-family: 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 .education-page .search-bar:focus-within {
-	width: 34em;
-	z-index: 9999;
+	width: 43em;
+	z-index: 55;
 	border-radius: 6px;
 	background-color: white;
 	border-bottom-left-radius: 0;
@@ -865,8 +921,10 @@ body {
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
 .education-page .search-results {
-	z-index: 9999;
-	right: 11em;
+	z-index: 55;
+	width: 43em;
+	left: 37em;
+	top: 25em;
 	box-shadow: 0px 15px 15px -5px rgba(0, 0, 0, 0.3);
 }
 .education-page .menu-left li {
@@ -965,14 +1023,14 @@ body {
 
 .circle.circle-1 {
 	border: 3px gold solid;
-	top: 21.1em;
+	top: 40em;
 	left: 71em;
 	box-shadow: 0 10px 20px 15px rgba(184, 212, 255, 0.384);
 }
 
 .circle.circle-2 {
 	border: 27px rgb(56, 87, 133) solid;
-	top: 22.5em;
+	top: 41.5em;
 	left: 72.5em;
 	width: 27em;
 	height: 27em;
@@ -985,7 +1043,7 @@ body {
 	display: flex;
 	align-items: center;
 	right: 16em;
-	top: 220px;
+	top: 32em;
 	width: 12em;
 	padding: 10px;
 	z-index: 7;
@@ -1011,7 +1069,7 @@ body {
 	display: flex;
 	align-items: center;
 	right: 44em;
-	top: 42em;
+	top: 62em;
 	width: 11em;
 	padding: 10px;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
