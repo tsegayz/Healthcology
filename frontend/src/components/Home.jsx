@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import first from "./assets/first.jpeg";
-import second from "./assets/second.jpeg";
-import back from "./assets/back.jpeg";
+import first from "./assets/home/first.jpeg";
+import second from "./assets/home/second.jpeg";
+import back from "./assets/home/back.jpeg";
 import image from "./logo.png";
-import lab from "./assets/pharma.jpg";
-import medica from "./assets/medica.jpg";
+import lab from "./assets/home/pharma.jpg";
+import medica from "./assets/home/medica.jpg";
 
 import { BsArrowRight, BsPatchQuestion } from "react-icons/bs";
 import {
@@ -17,8 +17,18 @@ import {
 } from "react-icons/gi";
 import { FaClockRotateLeft } from "react-icons/fa6";
 import { SiGitbook, SiWpexplorer } from "react-icons/si";
-
 import NavBar from "./Navbar";
+
+import dep from "./assets/home/dep.jpeg";
+import dep1 from "./assets/home/dep1.png";
+import cour from "./assets/home/cour.png";
+import cour1 from "./assets/home/cour1.jpeg";
+import lab1 from "./assets/home/lab.jpeg";
+import lab2 from "./assets/home/lab1.jpeg";
+import ques from "./assets/home/ques.jpeg";
+import ques1 from "./assets/home/ques1.png";
+import res from "./assets/home/research.jpeg";
+import res1 from "./assets/home/research1.jpeg";
 
 function Home({ footer }) {
 	const services = [
@@ -61,8 +71,8 @@ function Home({ footer }) {
 			name: "Departements",
 			description:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatum consequatur sequi soluta sunt maxime deserunt, blanditiis eaque non quod ex accusamus voluptatem praesentium, recusandae voluptas.",
-			image1: "./assets/medica.jpg",
-			image2: "URL or require() for image 2",
+			image1: dep,
+			image2: dep1,
 		},
 		{
 			id: 2,
@@ -70,8 +80,8 @@ function Home({ footer }) {
 			name: "Courses",
 			description:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatum consequatur sequi soluta sunt maxime deserunt, blanditiis eaque non quod ex accusamus voluptatem praesentium, recusandae voluptas.",
-			image1: "URL or require() for image 1",
-			image2: "URL or require() for image 2",
+			image1: cour,
+			image2: cour1,
 		},
 		{
 			id: 3,
@@ -79,8 +89,8 @@ function Home({ footer }) {
 			name: "Lab experiments",
 			description:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatum consequatur sequi soluta sunt maxime deserunt, blanditiis eaque non quod ex accusamus voluptatem praesentium, recusandae voluptas.",
-			image1: "URL or require() for image 1",
-			image2: "URL or require() for image 2",
+			image1: lab1,
+			image2: lab2,
 		},
 		{
 			id: 4,
@@ -88,8 +98,8 @@ function Home({ footer }) {
 			name: "Questions",
 			description:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatum consequatur sequi soluta sunt maxime deserunt, blanditiis eaque non quod ex accusamus voluptatem praesentium, recusandae voluptas.",
-			image1: "URL or require() for image 1",
-			image2: "URL or require() for image 2",
+			image1: ques,
+			image2: ques1,
 		},
 		{
 			id: 5,
@@ -97,8 +107,8 @@ function Home({ footer }) {
 			name: "Researches",
 			description:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatum consequatur sequi soluta sunt maxime deserunt, blanditiis eaque non quod ex accusamus voluptatem praesentium, recusandae voluptas.",
-			image1: "URL or require() for image 1",
-			image2: "URL or require() for image 2",
+			image1: res,
+			image2: res1,
 		},
 	];
 	const [selectedItem, setSelectedItem] = useState(education[0]); // Set the first item as default
@@ -206,9 +216,13 @@ function Home({ footer }) {
 					<h2> High quality Educational & Labratory experience </h2>
 					<div className='education'>
 						{education.map((value, index) => {
+							const isSelected = selectedItem && selectedItem.id === value.id;
+							const containerClasses = `education-container ${
+								isSelected ? "selected" : ""
+							}`;
 							return (
 								<div
-									className='education-container'
+									className={containerClasses}
 									key={value.id}
 									onClick={() => handleItemClick(value)}
 								>
@@ -237,10 +251,14 @@ function Home({ footer }) {
 						</div>
 						<div className='second-col'>
 							{selectedItem && (
-								<>
-									<img src={selectedItem.image1} alt={selectedItem.name} />
-									<img src={selectedItem.image2} alt={selectedItem.name} />
-								</>
+								<div className='container'>
+									<div className='cont-one'>
+										<img src={selectedItem.image2} alt={selectedItem.name} />
+									</div>
+									<div className='cont-two'>
+										<img src={selectedItem.image1} alt={selectedItem.name} />
+									</div>
+								</div>
 							)}
 						</div>
 					</div>

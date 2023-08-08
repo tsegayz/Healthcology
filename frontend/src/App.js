@@ -4,7 +4,7 @@ import footerList from "./components/db.json";
 
 import Home from "./components/Home";
 import Login from "./components/Login";
-import Education from "./components/Educational/education"
+import Education from "./components/Educational/Education"
 
 function App() {
 	return (
