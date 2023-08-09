@@ -6,8 +6,12 @@ import { useHistory } from "react-router-dom";
 import { RiSearch2Line } from "react-icons/ri";
 import { IoLogInOutline, IoLocationOutline } from "react-icons/io5";
 import { TbLocation } from "react-icons/tb";
+import useGeoLocation from "./hooks/useGeoLocation";
+
 
 function NavBar() {
+	const location = useGeoLocation();
+
 	const [isSearchActive, setIsSearchActive] = useState(false);
 	const data = ["balcha", "sarbet", "pharma", "tarik"];
 	const history = useHistory();
@@ -27,6 +31,7 @@ function NavBar() {
 		// Navigate to the location page and pass the selected item's data
 		history.push(`/courses/${item._id}`, { itemData: item });
 	};
+
 	return (
 		<div className='navbar'>
 			<div className='logo'>
@@ -81,6 +86,9 @@ function NavBar() {
 												}}
 											/>
 											Nearby
+											{location.loaded
+												? JSON.stringify(location)
+												: "location data not avaliable yet"}
 										</a>
 									</span>
 								)}

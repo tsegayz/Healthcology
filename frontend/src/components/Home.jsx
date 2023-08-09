@@ -116,6 +116,7 @@ function Home({ footer }) {
 	const handleItemClick = (item) => {
 		setSelectedItem(item);
 	};
+
 	return (
 		<div className='home'>
 			<div className='start'>

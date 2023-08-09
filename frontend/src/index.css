@@ -849,6 +849,10 @@ body {
 .education-page {
 	background-color: #f9fdff;
 }
+.education-page .navbar{
+	margin-top: -20px;
+	margin-bottom: 5em;
+}
 .education-page .menu-left {
 	margin-right: 32em;
 }
