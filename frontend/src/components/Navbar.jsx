@@ -1,16 +1,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import image from "./logo.png";
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 import { RiSearch2Line } from "react-icons/ri";
 import { IoLogInOutline, IoLocationOutline } from "react-icons/io5";
-import { TbLocation } from "react-icons/tb";
-import useGeoLocation from "./hooks/useGeoLocation";
 
+// import { TbLocation } from "react-icons/tb";
+// import useGeoLocation from "./hooks/useGeoLocation";
 
 function NavBar() {
-	const location = useGeoLocation();
+	// const location = useGeoLocation();
 
 	const [isSearchActive, setIsSearchActive] = useState(false);
 	const data = ["balcha", "sarbet", "pharma", "tarik"];
@@ -31,6 +32,18 @@ function NavBar() {
 		// Navigate to the location page and pass the selected item's data
 		history.push(`/courses/${item._id}`, { itemData: item });
 	};
+
+	useEffect(() => {
+		function handleDocumentClick(event) {
+			if (!event.target.closest(".search-container")) {
+				setIsSearchActive(false);
+			}
+		}
+		document.addEventListener("click", handleDocumentClick);
+		return () => {
+			document.removeEventListener("click", handleDocumentClick);
+		};
+	}, []);
 
 	return (
 		<div className='navbar'>
@@ -62,20 +75,20 @@ function NavBar() {
 								className='input-field'
 								type='text'
 								onFocus={() => setIsSearchActive(true)}
-								onBlur={() => setIsSearchActive(false)}
 								onChange={filterHandler}
 								placeholder='Search hospitals, pharmacy .....'
 							/>
 						</div>
-						<hr
-							className={`horizontal-line ${isSearchActive ? "active" : ""}`}
-						/>
 						{isSearchActive && (
 							<div className='search-results'>
 								{filteredPlaces.length === 0 && (
 									<span>
-										<a>
-											<TbLocation
+										<Link
+											id='nearby-link'
+											to='/near'
+											style={{ textDecoration: "none" }}
+										>
+											<IoLocationOutline
 												style={{
 													fontSize: "30px",
 													padding: "5px",
@@ -86,17 +99,16 @@ function NavBar() {
 												}}
 											/>
 											Nearby
-											{location.loaded
+											{/* {location.loaded
 												? JSON.stringify(location)
-												: "location data not avaliable yet"}
-										</a>
+												: "location data not avaliable yet"} */}
+										</Link>
 									</span>
 								)}
 								{filteredPlaces.map((value) => (
-									<a
+									<div
 										className='search-item'
-										target=''
-										key={value._id}
+										key={value}
 										onClick={() => handleItemClick(value)}
 									>
 										<div className='result-name'>
@@ -112,9 +124,9 @@ function NavBar() {
 													}}
 												/>
 											</span>
-											<p> {value} </p>
+											<p>{value}</p>
 										</div>
-									</a>
+									</div>
 								))}
 							</div>
 						)}

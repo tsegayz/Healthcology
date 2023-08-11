@@ -5,6 +5,7 @@ import footerList from "./components/db.json";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Education from "./components/Educational/Education"
+import Near from "./components/Health/Near";
 
 function App() {
 	return (
@@ -17,6 +18,9 @@ function App() {
 						</Route>
 						<Route exact path='/login'>
 							<Login />
+						</Route>
+						<Route exact path='/near'>
+							<Near/>
 						</Route>
 						<Route exact path='/education'>
 							<Education/>
