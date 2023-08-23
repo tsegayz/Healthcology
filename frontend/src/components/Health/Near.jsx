@@ -20,7 +20,7 @@ import {
 
 const Near = () => {
 	const { isLoaded } = useJsApiLoader({
-		googleMapsApiKey: 'AIzaSyDC0W8_vvoftSTz6ndg3C8bXDeDFLN7LyU',
+		googleMapsApiKey: '',
 		libraries: ["places"],
 	});
 
