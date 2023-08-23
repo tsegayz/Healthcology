@@ -931,7 +931,7 @@ body {
 	z-index: 55;
 	width: 43em;
 	left: 37em;
-	top: 25em;
+	top: 27.5em;
 	box-shadow: 0px 15px 15px -5px rgba(0, 0, 0, 0.3);
 }
 .education-page .menu-left li {
@@ -1385,8 +1385,76 @@ body {
 }
 
 /* /////////////// map conatiner ///////////////// */
-.map-container {
-	margin: 6.5em 30em;
-	/* width: 100%; */
-	height: 75vh;
+/* styles.css (or your preferred CSS file) */
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
+  
+  .loading-spinner {
+	margin-top: 8em;
+	margin-left: 55em;
+	width: 70px;
+	height: 70px;
+	border: 7px solid #ccc;
+	border-top: 7px solid rgb(0, 174, 255);
+	border-radius: 50%;
+	animation: spin 2.5s linear infinite;
+  }
+
+.near h1{
+	font-size: 42px;
+	font-weight:100;
+	margin-top: 1em;
+	font-family:'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+.near  .box {
+	position: absolute;
+	top: 6.5em;
+	left: 40em;
+	padding-left: 20px;
+	padding-bottom: 15px;
+	border-radius: 20px;
+	padding: 20px;
+	padding-right: 0;
+	box-shadow: 0 1px 15px 10px rgb(238, 238, 238);
+	background-color: white;
+	border: none;
+	text-align: start;
+}
+.near  .box input{
+	border: 1px solid #7a7a7a;
+	border-radius: 20px;
+	margin-top: 0px;
+	margin-right: 18px;
+	padding: 10px 0;
+	padding-left: 15px;
+}
+
+.near  .box button{
+	border: 1px solid #7a7a7a;
+	border-radius: 5px;
+	margin-top: 0px;
+	margin-right: 18px;
+	font-size: 15px;
+	padding: 5px 20px;
+	background-color: rgb(2, 42, 95);
+	color: white;
+}
+.near  .box .icon-button{
+	border: 1px solid #7a7a7a;
+	border-radius: 20px;
+	margin-top: 0px;
+	margin-right: 18px;
+	font-size: 13px;
+	padding: 5px 10px;
+	background-color: rgb(255, 255, 255);
+	color: black;
+}
+.near .map-container {
+	margin: 0 30em;
+	height: 70vh;
+	margin-top: 10em;
+	margin-bottom: 0;
 }
