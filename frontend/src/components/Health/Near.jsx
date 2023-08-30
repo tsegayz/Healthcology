@@ -20,7 +20,7 @@ import {
 
 const Near = () => {
 	const { isLoaded } = useJsApiLoader({
-		googleMapsApiKey: '',
+		googleMapsApiKey: "AIzaSyDC0W8_vvoftSTz6ndg3C8bXDeDFLN7LyU",
 		libraries: ["places"],
 	});
 
@@ -59,8 +59,12 @@ const Near = () => {
 	}
 
 	if (!isLoaded) {
-		return <div className='loading-spinner'>
-		</div>;
+		return (
+			<div className="spin">
+				<div className='loading-spinner'></div>
+				<h3> loading </h3>
+			</div>
+		);
 	}
 
 	return (

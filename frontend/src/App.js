@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Education from "./components/Educational/Education"
 import Near from "./components/Health/Near";
+import Courses from "./components/Educational/Courses";
 
 function App() {
 	return (
@@ -24,6 +25,9 @@ function App() {
 						</Route>
 						<Route exact path='/education'>
 							<Education/>
+						</Route>
+						<Route exact path='/courses'>
+							<Courses/>
 						</Route>
 					</Switch>
 				</div>

@@ -3,7 +3,7 @@ import image from "../logo.png";
 import student from "../assets/education/student.png";
 import edu from "../assets/education/edu.png";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 import { RiSearch2Line } from "react-icons/ri";
 import {
@@ -133,26 +133,31 @@ function Education() {
 			id: 1,
 			icon: <SiGitbook />,
 			name: "Departements",
+			link: "/departements",
 		},
 		{
 			id: 2,
 			icon: <GiMicroscope />,
 			name: "Courses",
+			link: "/courses",
 		},
 		{
 			id: 3,
 			icon: <GiTestTubes />,
 			name: "Lab experiments",
+			link: "/experiments",
 		},
 		{
 			id: 4,
 			icon: <BsPatchQuestion />,
 			name: "Questions",
+			link: "/questions",
 		},
 		{
 			id: 5,
 			icon: <GiArchiveResearch />,
 			name: "Researches",
+			link: "/researches",
 		},
 	];
 	return (
@@ -192,7 +197,8 @@ function Education() {
 				<h1> What do you need?</h1>
 				<div className='category-container'>
 					{education.map((item) => (
-						<div
+						<a
+							href={item.link}
 							className={`category-map ${
 								selectedItem?.id === item.id ? "selected" : ""
 							}`}
@@ -201,7 +207,7 @@ function Education() {
 						>
 							<span>{item.icon}</span>
 							<p>{item.name}</p>
-						</div>
+						</a>
 					))}
 				</div>
 				<div className='search-bar'>
