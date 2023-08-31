@@ -96,8 +96,9 @@ body {
 }
 .logo h1 {
 	margin-left: -33px;
-	padding-top: 41px;
-	font-size: 38px;
+	padding-top: 50px;
+	font-weight: 100;
+	font-size: 30px;
 }
 .logo span {
 	font-size: 25px;
@@ -713,84 +714,86 @@ body {
 /* //////////////////// LOGIN PAGE //////////////// */
 .login-page {
 	overflow-y: hidden;
-	height: 60em;
-}
-.login {
-	height: 52em;
-	padding-top: 60px;
-	margin-right: 200px;
-	margin-top: 50px;
 	display: flex;
-	overflow: hidden;
-	margin-top: 0px;
+	flex-direction: column;
+	align-items: center;
 }
-.login .background {
+.header {
+	margin-top: 50px;
+	width: 100%;
+	padding: 0 4em;
+	padding-right: 20em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.header a{
+	text-decoration: none;
+}	
+.header a span {
+	color: white;
+	display: flex;
+	align-items: center;
+	font-size: 22px;
+	background-color: rgb(0, 0, 0);
+	border-radius: 0 30px 30px 30px;
+	height: 2em;
+	padding: 0 20px;
+}
+.header a span:hover {
+	color: white;
+	transition: all 0.4s;
+	background-color: rgba(0, 0, 0, 0.836);
+}
+.background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 82%;
+	height: 85%;
+	margin-left: 10em;
+	margin-top: 4em;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
-	position: relative;
-	left: 0;
-	top: 0;
-	height: 92em;
-	width: 120em;
 	z-index: -1;
-	margin-top: -19.5em;
-	margin-left: -31em;
-	margin-right: -65em;
+	border-radius: 0px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-.login .container .navbar {
-	margin-left: -130px;
-	padding-top: 100px;
-}
-.login .part-one .container .image-container {
-	width: 57em;
-	height: 43em;
-	margin-left: -200px;
-	margin-top: -150px;
-}
-
-.login .part-one .container .image-container img {
-	width: 100%;
-	height: 100%;
-}
-.login .part-two {
-	width: 43em;
-	margin-left: -8em;
-	height: 42.5em;
-	padding-top: 25px;
-	margin-top: 30px;
-	position: relative;
+.login {
+	display: flex;
+	width: 30em;
 	overflow: hidden;
 }
-.login .part-two img {
-	width: 80em;
-	height: 75em;
+.content {
+	padding: 20px;
+	text-align: center;
+}
+.login .part-two {
 	position: absolute;
-	margin-top: -14.8em;
-	margin-left: -10em;
+	left: 33em;
+	width: 25em;
+	height: 32.5em;
+	background-color: rgba(255, 254, 251, 0.76);
+	box-shadow: 0px 0px 10px rgba(121, 121, 121, 0.2);
+	border-radius: 10px;
 }
 .login .part-two .content {
 	position: absolute;
 	top: 0;
 	left: 0;
-	right: 0;
-	bottom: 0;
 	display: flex;
 	flex-direction: column;
-	margin-right: 120px;
-	width: 40em;
-	padding-left: 240px;
 	padding-top: 70px;
-	margin-left: 0px;
 }
 .login .part-two .content .form {
+	margin-left: 60px;
 	display: flex;
 	flex-direction: column;
 	margin-right: 120px;
 }
 .login .part-two .content h1 {
 	font-size: 35px;
-	font-weight: 100;
+	margin-left: -70px;
 	color: rgb(27, 61, 110);
 }
 .login .part-two .user-input-container,
@@ -1587,13 +1590,13 @@ body {
 }
 .courses .footer-column {
 	text-align: start;
-	flex-basis: calc(25% - 20px); 
+	flex-basis: calc(25% - 20px);
 	margin-bottom: 20px;
 }
-.courses .footer-column h4{
+.courses .footer-column h4 {
 	font-size: 20px;
 	color: #424242;
-	font-family: Calibri, 'Trebuchet MS', sans-serif;
+	font-family: Calibri, "Trebuchet MS", sans-serif;
 	font-weight: 100;
 }
 .courses .footer-column ul {
@@ -1607,7 +1610,7 @@ body {
 
 .courses .footer-column ul li a {
 	margin-left: 5px;
-	font-family: Calibri, 'Trebuchet MS', sans-serif;
+	font-family: Calibri, "Trebuchet MS", sans-serif;
 	text-decoration: none;
 	color: #333;
 }
@@ -1632,7 +1635,7 @@ body {
 	margin-bottom: 20px;
 	margin-left: 53em;
 }
-.courses  .social-icons-row{
+.courses .social-icons-row {
 	display: flex;
 	align-items: start;
 }
@@ -1647,8 +1650,8 @@ body {
 	padding-top: 7px;
 	text-decoration: none;
 }
-.courses  .social-icons-row .copyright-text {
-	font-size:16px;
+.courses .social-icons-row .copyright-text {
+	font-size: 16px;
 	color: #383838;
 	padding-top: 10px;
-  }
+}

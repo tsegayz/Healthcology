@@ -1,30 +1,31 @@
-import back from "./assets/login.jpg";
+import { IoLogInOutline } from "react-icons/io5";
 import image from "./logo.png";
-import login from "./assets/blob1.svg";
+import login from "./assets/login.png";
 
 function Login() {
 	const submit = async (e) => {};
 	return (
 		<div className='login-page'>
+			<div
+				className='background-image'
+				style={{ backgroundImage: `url(${login})` }}
+			></div>
+			<div className="header">
+				<div className='logo'>
+					<img src={image} alt='logo' />
+					<h1>
+						H<span>ealthCology</span>
+					</h1>
+				</div>
+				<a href='/login'>
+					<span>
+						<IoLogInOutline style={{ fontSize: "25px" }} /> <p> Login </p>
+					</span>
+				</a>
+			</div>
+
 			<div className='login'>
-				<img src={login} alt='logo' className='background' />
-				<section className='part-one'>
-					<div className='container'>
-						<div className='navbar'>
-							<div className='logo'>
-								<img src={image} alt='logo' />
-								<h1>
-									H<span>ealthCology</span>
-								</h1>
-							</div>
-						</div>
-						<div className='image-container'>
-							<img src={back} alt='login' />
-						</div>
-					</div>
-				</section>
 				<section className='part-two'>
-					<img src={login} alt='login' />
 					<div className='content'>
 						<h1>Login</h1>
 						<form className='form' onSubmit={submit}>
