@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Education from "./components/Educational/Education"
 import Near from "./components/Health/Near";
 import Courses from "./components/Educational/Courses";
+import Departement from "./components/Educational/Departement";
 
 function App() {
 	return (
@@ -28,6 +29,9 @@ function App() {
 						</Route>
 						<Route exact path='/courses'>
 							<Courses/>
+						</Route>
+						<Route exact path='/departements'>
+							<Departement/>
 						</Route>
 					</Switch>
 				</div>
