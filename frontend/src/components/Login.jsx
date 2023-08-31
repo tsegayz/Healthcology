@@ -10,7 +10,7 @@ function Login() {
 				className='background-image'
 				style={{ backgroundImage: `url(${login})` }}
 			></div>
-			<div className="header">
+			<div className='header'>
 				<div className='logo'>
 					<img src={image} alt='logo' />
 					<h1>
@@ -55,6 +55,9 @@ function Login() {
 								Login
 							</button>
 						</form>
+						<div className="signup">
+							<p> Don't have an account? <a href="/signup"> Register now</a></p>
+						</div>
 					</div>
 				</section>
 			</div>

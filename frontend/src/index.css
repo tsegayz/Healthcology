@@ -775,7 +775,7 @@ body {
 	height: 32.5em;
 	background-color: rgba(255, 254, 251, 0.76);
 	box-shadow: 0px 0px 10px rgba(121, 121, 121, 0.2);
-	border-radius: 10px;
+	border-radius: 30px;
 }
 .login .part-two .content {
 	position: absolute;
@@ -800,7 +800,7 @@ body {
 .login .part-two .password-input-container {
 	position: relative;
 	display: inline-block;
-	border: 2px solid #cce4ff;
+	border: 2px solid #cce4ffb0;
 	border-radius: 5px;
 	padding: 5px;
 	margin-bottom: 20px;
@@ -851,6 +851,16 @@ body {
 	color: rgb(27, 61, 110);
 }
 
+
+.content .signup {
+	text-align: start;
+	margin-top: 15px;
+	margin-left: 55px;
+	width: 100px;
+}
+.content .signup p {
+	font-size: 17px;
+}
 /* /////////// education page ////////////// */
 .education-page {
 	background-color: #f9fdff;
