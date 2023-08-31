@@ -5,15 +5,15 @@ import dsa from "../assets/education/dsa.png";
 import { IoLogInOutline, IoLocationOutline } from "react-icons/io5";
 import { RiSearch2Line } from "react-icons/ri";
 import { TbLocation } from "react-icons/tb";
+import { BiLogoFacebook, BiLogoLinkedin, BiLogoTwitter } from "react-icons/bi";
 import { useState } from "react";
-import { GrLike } from "react-icons/gr";
+import { AiOutlineInstagram } from "react-icons/ai";
 
 function Courses() {
 	const [selectedItem, setSelectedItem] = useState(null);
 	const [isSearchActive, setIsSearchActive] = useState(false);
 
 	const data = ["balcha", "sarbet", "pharma", "tarik"];
-	const courses = ["DSA", "CSS", "HTML", "JS"];
 	const [filteredPlaces, setFilteredPlaces] = useState([]);
 	const filterHandler = (e) => {
 		const searchWord = e.target.value;
@@ -77,7 +77,24 @@ function Courses() {
 			likes: 3,
 		},
 	];
-
+	const footerColumnsData = [
+		{
+			title: "Column 1",
+			links: ["Link 1", "Link 2", "Link 3", "Link 4"],
+		},
+		{
+			title: "Column 2",
+			links: ["Link 5", "Link 6", "Link 7", "Link 8"],
+		},
+		{
+			title: "Column 3",
+			links: ["Link 9", "Link 10", "Link 11", "Link 12"],
+		},
+		{
+			title: "Column 4",
+			links: ["Link 13", "Link 14", "Link 15", "Link 16"],
+		},
+	];
 	return (
 		<div className='courses'>
 			<div className='navbar'>
@@ -204,15 +221,87 @@ function Courses() {
 							<div className='course-item' key={course.id}>
 								<img src={course.image} alt={course.title} />
 								<h3>{course.title}</h3>
-                <p> Rating : {course.likes} </p>
+								<p> Rating : {course.likes} </p>
 								<a href={`coursedetail/${course.id}`}>
-									<button >View Details</button>
+									<button>View Details</button>
 								</a>
 							</div>
 						))}
 					</div>
 				</div>
 			</section>
+			<section className='part-two'>
+				<div className='course-container' id='slider3'>
+					<h2>New Courses</h2>
+					<div className='course-grid'>
+						{recommendedCourses.map((course) => (
+							<div className='course-item' key={course.id}>
+								<img src={course.image} alt={course.title} />
+								<h3>{course.title}</h3>
+								<p> Rating : {course.likes} </p>
+								<a href={`coursedetail/${course.id}`}>
+									<button>View Details</button>
+								</a>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+			<section className='part-two'>
+				<div className='course-container' id='slider3'>
+					<h2>Grow your skill set</h2>
+					<div className='course-grid'>
+						{recommendedCourses.map((course) => (
+							<div className='course-item' key={course.id}>
+								<img src={course.image} alt={course.title} />
+								<h3>{course.title}</h3>
+								<p> Rating : {course.likes} </p>
+								<a href={`coursedetail/${course.id}`}>
+									<button>View Details</button>
+								</a>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+			<footer>
+				<div className='footer-columns'>
+					{footerColumnsData.map((column, index) => (
+						<div className='footer-column' key={index}>
+							<h4>{column.title}</h4>
+							<ul>
+								{column.links.map((link, linkIndex) => (
+									<li key={linkIndex}>
+										<a href={column.links}>{link}</a>
+									</li>
+								))}
+							</ul>
+						</div>
+					))}
+				</div>
+				<hr className='footer-divider' style={{ margin: "20px 270px" }} />
+				<div className='social-icons'>
+					<div className='social-icons-row'>
+						<div className='copyright-text'>
+							© 2023 helthcology Inc. All rights reserved.
+						</div>
+						<div className='social-icons-right'>
+							<a href='link'>
+								<AiOutlineInstagram />
+							</a>
+							<a href='link'>
+								<BiLogoFacebook />
+							</a>
+							<a href='link'>
+								<BiLogoLinkedin />
+							</a>
+							<a href='link'>
+								<BiLogoTwitter />
+							</a>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
 	);
 }
