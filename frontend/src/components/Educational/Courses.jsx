@@ -1,5 +1,5 @@
 import image from "../logo.png";
-import course from "../assets/course.png";
+import course from "../assets/education/course.png";
 import dsa from "../assets/education/dsa.png";
 
 import { IoLogInOutline, IoLocationOutline } from "react-icons/io5";

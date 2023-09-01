@@ -718,7 +718,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 }
-.header {
+.login-page .header {
 	margin-top: 50px;
 	width: 100%;
 	padding: 0 4em;
@@ -727,10 +727,10 @@ body {
 	align-items: center;
 	justify-content: space-between;
 }
-.header a{
+.login-page .header a {
 	text-decoration: none;
-}	
-.header a span {
+}
+.login-page .header a span {
 	color: white;
 	display: flex;
 	align-items: center;
@@ -745,7 +745,7 @@ body {
 	transition: all 0.4s;
 	background-color: rgba(0, 0, 0, 0.836);
 }
-.background-image {
+.login-page .background-image {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -764,7 +764,7 @@ body {
 	width: 30em;
 	overflow: hidden;
 }
-.content {
+.login-page .content {
 	padding: 20px;
 	text-align: center;
 }
@@ -850,8 +850,6 @@ body {
 	font-weight: 100;
 	color: rgb(27, 61, 110);
 }
-
-
 .content .signup {
 	text-align: start;
 	margin-top: 15px;
@@ -1038,29 +1036,26 @@ body {
 	position: absolute;
 	z-index: 5;
 }
-.circle {
+.education-page .circle {
 	width: 30em;
 	height: 30em;
 	border-radius: 50%;
 	position: absolute;
 	z-index: 1;
 }
-
-.circle.circle-1 {
+.education-page .circle.circle-1 {
 	border: 3px gold solid;
 	top: 40em;
 	left: 71em;
 	box-shadow: 0 10px 20px 15px rgba(184, 212, 255, 0.384);
 }
-
-.circle.circle-2 {
+.education-page .circle.circle-2 {
 	border: 27px rgb(56, 87, 133) solid;
 	top: 41.5em;
 	left: 72.5em;
 	width: 27em;
 	height: 27em;
 }
-
 .education-page .second-col .first .image-container span {
 	position: absolute;
 	background-color: rgb(247, 247, 247);
@@ -1403,7 +1398,6 @@ body {
 }
 
 /* /////////////// map conatiner ///////////////// */
-/* styles.css (or your preferred CSS file) */
 @keyframes spin {
 	0% {
 		transform: rotate(0deg);
@@ -1664,4 +1658,94 @@ body {
 	font-size: 16px;
 	color: #383838;
 	padding-top: 10px;
+}
+
+/* ////////////////////  department  /////////////////// */
+
+.department .header {
+	margin-top: 20px;
+	width: 100%;
+	padding: 0 4em;
+	padding-right: 20em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.department .header a {
+	text-decoration: none;
+}
+.department .header a span {
+	color: white;
+	display: flex;
+	align-items: center;
+	font-size: 22px;
+	background-color: rgb(56, 87, 133);
+	border-radius: 0 30px 30px 30px;
+	height: 2em;
+	margin-top: 60px;
+	padding: 0 20px;
+}
+.department .header a span:hover {
+	color: white;
+	transition: all 0.4s;
+	background-color: rgba(56, 87, 133, 0.904);
+}
+.department .sec-one {
+	margin-left: -20px;
+	display: flex;
+	justify-content: space-between;
+}
+.department .sec-one .first-col {
+	margin: 0;
+	margin-top: 120px;
+	margin-left: 220px;
+	text-align: start;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.department .sec-one .first-col h1 {
+	font-size: 70px;
+	width: 12em;
+	margin: 0;
+}
+.department .sec-one .first-col p {
+	width: 30em;
+	font-size: 16px;
+	margin: 0;
+	margin-top: 20px;
+}
+
+.department .sec-one .first-col a {
+	color: white;
+	text-decoration: none;
+}
+.department .sec-one .first-col a span {
+	color: white;
+	width: 11.4em;
+	height: 1em;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 100;
+	margin-top: 30px;
+	background-color: rgb(56, 87, 133);
+	border-radius: 50px;
+	padding: 23px 35px;
+}
+.department .sec-one .first-col a span:hover {
+	color: white;
+	transition: all 0.5s;
+	background-color: rgb(56, 87, 133);
+}
+.department .sec-one .second-col {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+.department .sec-one .second-col .image-container img {
+	height: auto; 
+	margin-top: 60px;
+	margin-right: 12em ;
+	display: block; 
 }
