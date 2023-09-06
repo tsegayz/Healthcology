@@ -1744,8 +1744,133 @@ body {
 	padding: 0;
 }
 .department .sec-one .second-col .image-container img {
-	height: auto; 
+	height: auto;
 	margin-top: 60px;
-	margin-right: 12em ;
-	display: block; 
+	margin-right: 12em;
+	display: block;
+}
+.department .sec-two {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.department .part-one {
+	display: grid;
+	grid-template-columns: 200px auto;
+	align-items: center;
+	gap: 50px;
+	margin: -130px 17em;
+}
+.department .part-one h1 {
+	font-family: Geneva, Verdana, sans-serif;
+	width: 10em;
+	font-size: 50px;
+	text-align: start;
+}
+.department .part-one p {
+	font-size: 25px;
+	font-weight: 100;
+	width: 20em;
+	margin: 0;
+}
+.department .part-one .image-container {
+	margin-left: 20em;
+	width: 52em;
+	height: 100%;
+	overflow: hidden;
+	clip-path: url("#custom-clip-path");
+}
+.department .part-one .image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.department .part-two {
+	margin-top: -100px;
+	margin-left: 14em;
+	margin-right: 22em;
+	display: flex;
+	justify-content: space-around;
+}
+
+.department .part-two .items {
+	z-index: 9;
+	width: 0px;
+}
+
+.department .part-two .items p {
+	width: 6.9em;
+	background-color: rgba(9, 59, 133, 0.959);
+	margin-left: -30px;
+	color: white;
+	text-align: center;
+	padding: 10px 0px;
+	border-radius: 30px;
+}
+.department .sec-three {
+	display: flex;
+	align-items: center;
+	margin-top: 100px;
+}
+.department .sec-three .first {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	margin: 100px 15em;
+	margin-right: 25px;
+	width: 30em;
+	padding: 40px;
+	padding-bottom: 10.3em;
+	background-color:  rgba(9, 59, 133, 0.171);
+}
+.department .sec-three .first h2{
+	font-size: 40px;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	width: 7em;
+	color: white;
+	text-align: start;
+	margin: 0;	
+}
+.department .sec-three .first h2 span{
+	color: rgb(5, 39, 88);
+}
+.department .sec-three .first p{
+	text-align: start;
+	width: 20em;
+}
+.department .sec-three .first button{
+	background-color: rgb(5, 39, 88);
+	color: white;
+	padding: 10px 30px;
+	font-size: 16px;
+	margin-top: 20px;
+	border: none;
+	border-radius: 5px;
+}
+.department .sec-three .second {
+	padding: 60px 80px;
+	background-color: #e2e2e227;
+}
+
+.department .sec-three .matrix {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 35px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.department .sec-three .matrix .container {
+	color: rgb(7, 48, 110);
+	padding: 33px;
+	font-size: 18px;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+.department .sec-three .matrix .container img {
+	max-width: 50px;
+	height: auto;
 }
