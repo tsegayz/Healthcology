@@ -1,8 +1,16 @@
 import { IoLogInOutline } from "react-icons/io5";
-import { FaStethoscope } from "react-icons/fa";
+import {
+	FaFacebook,
+	FaInstagram,
+	FaLinkedin,
+	FaStethoscope,
+	FaTwitter,
+} from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import { LiaSyringeSolid } from "react-icons/lia";
 import { GiBrain } from "react-icons/gi";
+import { AiFillHeart } from "react-icons/ai";
+import { HiPlusSm } from "react-icons/hi";
 
 import image from "../logo.png";
 import dep from "../assets/education/depart.jpg";
@@ -11,6 +19,9 @@ import brain from "../assets/education/brain.png";
 import heart from "../assets/education/heart.png";
 import lung from "../assets/education/lungs.png";
 import uteres from "../assets/education/uteres.png";
+import anest from "../assets/education/scissor.png";
+import medic from "../assets/education/medic.jpeg";
+import back from "../assets/education/depb.png";
 
 function Departement() {
 	const customBlobShape = (
@@ -35,14 +46,14 @@ function Departement() {
 	];
 
 	const diagnostic = [
-		{ icon: <img src={brain} alt='#' />, title: "Cardilogy" },
-		{ icon: <img src={lung} alt='#' />, title: "Orthopedic" },
-		{ icon: <img src={heart} alt='#' />, title: "Dermatology" },
-		{ icon: <img src={uteres} alt='#' />, title: "Anesthesia" },
-		{ icon: <img src={uteres} alt='#' />, title: "Anesthesia" },
-		{ icon: <img src={uteres} alt='#' />, title: "Anesthesia" },
-		{ icon: <img src={uteres} alt='#' />, title: "Anesthesia" },
-		{ icon: <img src={uteres} alt='#' />, title: "Anesthesia" },
+		{ icon: brain, title: "Neurology" },
+		{ icon: lung, title: "pulmonology" },
+		{ icon: heart, title: "Cardilogy" },
+		{ icon: uteres, title: "Gynecology" },
+		{ icon: anest, title: "Orthopedic" },
+		{ icon: anest, title: "Scissors" },
+		{ icon: anest, title: "Scissors" },
+		{ icon: anest, title: "Scissors" },
 	];
 	return (
 		<div className='department'>
@@ -102,7 +113,7 @@ function Departement() {
 						<div className='items'>
 							<span
 								style={{
-									backgroundColor: "rgb(9, 59, 133)",
+									backgroundColor: "rgb(5, 39, 88)",
 									boxShadow: "0 0 10px rgba(0, 0, 0, 0.414)",
 									border: "6px solid white",
 									color: "white",
@@ -132,15 +143,184 @@ function Departement() {
 				</div>
 				<div className='second'>
 					<div className='matrix'>
-						{diagnostic.map((value) => (
-							<div className='container'>
-								{value.icon}
+						{diagnostic.map((value, index) => (
+							<div className='container' key={index}>
+								<img
+									src={value.icon}
+									alt='#'
+									style={{ height: "90px", width: "6.5em" }} // Adjust the width and height as needed
+								/>
 								{value.title}
 							</div>
 						))}
 					</div>
 				</div>
 			</section>
+			<section className='sec-four'>
+				<div className='part-one'>
+					<p> Chosen fields </p>
+					<h2> Best Fields For Medical students </h2>
+				</div>
+				<div className='part-two'>
+					<img src={medic} alt='medic' />
+					<div className='container'>
+						{diagnostic.slice(0, 6).map((value) => (
+							<div className='medical'>
+								<img
+									src={value.icon}
+									alt='#'
+									style={{ width: "120px", height: "120px" }}
+								/>
+								{value.title}
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+			<section className='last'>
+				<div className='part-one'>
+					<section className='one'>
+						<img
+							src={back}
+							alt='back'
+							style={{
+								position: "absolute",
+								zIndex: "1",
+								height: "47em",
+								width: "87em",
+								marginLeft: "35em",
+								marginTop: "-6em",
+							}}
+						/>
+						<div className='circle'>
+							<HiPlusSm
+								style={{
+									fontSize: "63px",
+									color: "white",
+									position: "relative",
+									left: "72%",
+									top: "23px",
+									zIndex: "9999",
+									transform: "translate(-50%, -50%)",
+								}}
+							/>
+							<AiFillHeart
+								style={{
+									fontSize: "80px",
+									marginTop: "10px",
+									color: "rgb(88, 144, 223)",
+								}}
+							/>
+						</div>
+						<div className='text'>
+							<h4>
+								MEDICAL <span> INFOGRAPHIC </span>
+							</h4>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. odio?
+								In nemo sapiente ipsa?
+							</p>
+						</div>
+					</section>
+					<section className='two'>
+						{diagnostic.slice(0, 6).map((item, index) => (
+							<div className={`container item-${index}`} key={index}>
+								<div className='small-icon'>
+									<img
+										src={item.icon}
+										alt='#'
+										style={{ width: "70px", height: "55px" }}
+									/>
+								</div>
+								<div className='sec'>
+									<span> {item.title}</span>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										molestiae totam sed tenetur
+									</p>
+								</div>
+							</div>
+						))}
+					</section>
+				</div>
+
+				<div className='part-two'>
+					<div class='dot left'></div>
+					<div class='dot right'></div>
+					<hr class='horizontal-line' />
+					<div className='pillar'>
+						{diagnostic.slice(0, 3).map((item) => (
+							<div className='container'>
+								<div className='small-icon'>
+									<img
+										src={item.icon}
+										alt='#'
+										style={{ width: "55px", height: "40px" }}
+									/>
+								</div>
+								<div className='sec'>
+									<span> {item.title}</span>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										molestiae totam sed tenetur
+									</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+			<footer className='footer'>
+				<div className='footer-column'>
+					<div className='logo'>
+						<img src={image} alt='logo' />
+						<h1>
+							H<span>ealthCology</span>
+						</h1>
+					</div>
+					<div className='social-media'>
+						<FaFacebook className='icons' />
+						<FaTwitter className='icons' />
+						<FaInstagram className='icons' />
+						<FaLinkedin className='icons' />
+					</div>
+				</div>
+				<div className='footer-column'>
+					<ul className='footer-links'>
+						<li>
+							<a href='link'>Link 1</a>
+						</li>
+						<li>
+							<a href='link'>Link 2</a>
+						</li>
+						<li>
+							<a href='link'>Link 3</a>
+						</li>
+						<li>
+							<a href='link'>Link 4</a>
+						</li>
+						<li>
+							<a href='link'>Link 5</a>
+						</li>
+					</ul>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+						necessitatibus recusandae rerum dolorum quo cumque! Soluta cumque
+						enim eos, nesciunt dolorum odit eius assumenda quibusdam quasi autem
+						quas at deserunt.
+					</p>
+				</div>
+				<div className='footer-column'>
+					<div className='input-container'>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Voluptatum accusantium dicta
+						</p>
+						<input type='text' placeholder='Your message ...' />
+						<button type='submit'>Submit</button>
+					</div>
+				</div>
+			</footer>
 		</div>
 	);
 }
