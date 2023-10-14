@@ -2240,6 +2240,10 @@ body {
 .labs .start .overlay {
 	background-color: rgba(5, 28, 70, 0.486);
 	z-index: -1;
+	/* border-bottom-left-radius: 0; */
+}
+.labs .start .background-image {
+	/* border-bottom-left-radius: 0; */
 }
 .labs .start .navbar .logo h1 {
 	color: white;
@@ -2308,12 +2312,12 @@ body {
 	padding: 20px;
 	padding-left: 200px;
 }
-.labs .column-left h2{
+.labs .column-left h2 {
 	width: 9em;
 	font-size: 30px;
 	font-weight: 100;
 }
-.labs .column-left h2 span{
+.labs .column-left h2 span {
 	color: #3498db;
 	border-bottom: 2px solid #3498db;
 }
@@ -2324,20 +2328,20 @@ body {
 	margin: 10px 0;
 	margin-top: 6em;
 }
-.labs .row .medical{
+.labs .row .medical {
 	display: flex;
 	align-items: center;
 	margin: 10px;
 }
-.labs .row .medical p{
-	font-family: Calibri, 'Trebuchet MS', sans-serif;
+.labs .row .medical p {
+	font-family: Calibri, "Trebuchet MS", sans-serif;
 	text-align: start;
 	width: 31em;
 	display: flex;
 	margin-left: 19px;
 	flex-direction: column;
 }
-.labs .row .medical p span{
+.labs .row .medical p span {
 	color: #3498db;
 	font-size: 20px;
 	margin-bottom: 9px;
@@ -2350,4 +2354,88 @@ body {
 .labs .column-right img {
 	max-width: 100%;
 	height: auto;
+}
+
+.labs .three {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.labs .three {
+	height: 60vh;
+	position: relative;
+	margin-bottom: 10em;
+}
+.labs .three .background-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	border-radius: 0;
+}
+
+.labs .three .overlay {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(37, 37, 37, 0.514);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	border-radius: 0;
+}
+
+.labs .three .content {
+	color: white;
+	z-index: 8;
+	margin-top: -7em;
+}
+.labs .three .content h2 {
+	padding-bottom: 20px;
+	font-size: 40px;
+	font-family:  Calibri, 'Trebuchet MS', sans-serif;
+	display: inline-block; 
+	position: relative; 
+}
+
+.labs .three .content h2::after {
+	content: "";
+	display: block;
+	width: 75%; 
+	height: 2px; 
+	background-color: #ffffff; 
+	position: absolute;
+	bottom: 0;
+	left: 1.4em;
+}
+.labs .three .content p{
+	width: 50em;
+	font-size: 18px;
+}
+.labs .three .search-bar {
+	margin-top: 50px;
+	margin-left: 12em;
+	width: 30em;
+}
+.labs .three .content .search-results {
+	width: 30em;
+	height: 170px;
+	top: 22em;
+	right: 45.6em;
+	border-radius: 6px;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+.labs .three .content .search-results span a {
+	display: flex;
+	align-items: center;
+	color: black;
+	font-size: 20px;
+	padding: 10px 0;
+	margin: 10px 20px;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+	border-bottom: rgba(126, 126, 126, 0.541) 1px solid;
 }

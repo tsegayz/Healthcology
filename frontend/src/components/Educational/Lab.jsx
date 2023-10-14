@@ -1,8 +1,14 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import lab from "../assets/education/lab2.jpeg";
 import flask from "../assets/education/flask.png";
+import search from "../assets/education/search.jpeg";
 import colorflask from "../assets/education/colorflask.png";
 import image from "../logo.png";
 
+import { TbLocation } from "react-icons/tb";
+import { IoLocationOutline } from "react-icons/io5";
+import { useState } from "react";
+import { RiSearch2Line } from "react-icons/ri";
 import brain from "../assets/education/brain.png";
 import heart from "../assets/education/heart.png";
 import lung from "../assets/education/lungs.png";
@@ -22,6 +28,24 @@ function Lab() {
 		{ icon: anest, title: "Scissors" },
 	];
 
+	const [selectedItem, setSelectedItem] = useState(null);
+	const [isSearchActive, setIsSearchActive] = useState(false);
+
+	const data = ["balcha", "sarbet", "pharma", "tarik"];
+
+	const [filteredPlaces, setFilteredPlaces] = useState([]);
+	const filterHandler = (e) => {
+		const searchWord = e.target.value;
+
+		if (searchWord === "") {
+			setFilteredPlaces([]);
+		} else {
+			setFilteredPlaces(data);
+		}
+	};
+	const handleItemClick = (item) => {
+		setSelectedItem(item);
+	};
 	return (
 		<div className='labs'>
 			<div className='start'>
@@ -85,13 +109,13 @@ function Lab() {
 								<img
 									src={value.icon}
 									alt='#'
-									style={{ width: "80px", height: "80px", padding:'10px' }}
+									style={{ width: "80px", height: "80px", padding: "10px" }}
 								/>
 								<p>
 									<span>{value.title}</span> Lorem ipsum dolor sit amet
 									consectetur adipisicing elit. Quaerat aliquam beatae fugiat
 									placeat ullam suscipit cumque! Est doloribus quis maxime
-									similique hic 
+									similique hic
 								</p>
 							</div>
 						))}
@@ -101,6 +125,78 @@ function Lab() {
 					<div className='image-container'>
 						<img src={colorflask} alt='color' />
 					</div>
+				</div>
+			</section>
+
+			<section className='three'>
+				<img src={search} alt='back' className='background-image' />
+				<div className='overlay'></div>
+				<div className='content'>
+					<h2> Crucial Lab Experiments </h2>
+					<p>
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum
+						provident quos explicabo! Accusamus totam earum et ducimus laborum.
+						Autem quos aperiam provident ratione quibusdam eum fuga quasi sint
+						quaerat! Odio.
+					</p>
+					<div className='search-bar'>
+						<button className='search-icon'>
+							<RiSearch2Line style={{ color: "black", fontSize: "20px" }} />
+						</button>
+						<input
+							className={`input-field ${isSearchActive ? "active" : ""}`}
+							type='text'
+							onFocus={() => setIsSearchActive(true)}
+							onBlur={() => setIsSearchActive(false)}
+							onChange={filterHandler}
+							placeholder="Lab experiments"
+						/>
+					</div>
+					{isSearchActive && (
+						<div className='search-results'>
+							{filteredPlaces.length === 0 && (
+								<span>
+									<a>
+										<TbLocation
+											style={{
+												fontSize: "30px",
+												padding: "5px",
+												border: "rgb(51, 51, 51) 1px solid",
+												borderRadius: "50%",
+												color: "black",
+												marginRight: "10px",
+											}}
+										/>
+										Nearby
+									</a>
+								</span>
+							)}
+							{filteredPlaces.map((value) => (
+								<a
+									className='search-item'
+									target=''
+									key={value._id}
+									onClick={() => handleItemClick(value)}
+								>
+									<div className='result-name'>
+										<span>
+											<IoLocationOutline
+												style={{
+													fontSize: "30px",
+													padding: "5px",
+													border: "rgb(51, 51, 51) 1px solid",
+													borderRadius: "50%",
+													color: "black",
+													marginRight: "10px",
+												}}
+											/>
+										</span>
+										<p> {value} </p>
+									</div>
+								</a>
+							))}
+						</div>
+					)}
 				</div>
 			</section>
 		</div>
