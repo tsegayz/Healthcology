@@ -1,9 +1,27 @@
 import lab from "../assets/education/lab2.jpeg";
 import flask from "../assets/education/flask.png";
+import colorflask from "../assets/education/colorflask.png";
 import image from "../logo.png";
+
+import brain from "../assets/education/brain.png";
+import heart from "../assets/education/heart.png";
+import lung from "../assets/education/lungs.png";
+import uteres from "../assets/education/uteres.png";
+import anest from "../assets/education/scissor.png";
 import { FaArrowRight } from "react-icons/fa";
 
 function Lab() {
+	const diagnostic = [
+		{ icon: brain, title: "Neurology" },
+		{ icon: lung, title: "pulmonology" },
+		{ icon: heart, title: "Cardilogy" },
+		{ icon: uteres, title: "Gynecology" },
+		{ icon: anest, title: "Orthopedic" },
+		{ icon: anest, title: "Scissors" },
+		{ icon: anest, title: "Scissors" },
+		{ icon: anest, title: "Scissors" },
+	];
+
 	return (
 		<div className='labs'>
 			<div className='start'>
@@ -56,7 +74,35 @@ function Lab() {
 				</section>
 			</div>
 
-			<section className='two'></section>
+			<section className='two'>
+				<div className='column-left'>
+					<h2>
+						Lorem ipsum dolor <span> chemical processing</span>
+					</h2>
+					<div className='row'>
+						{diagnostic.slice(0, 3).map((value) => (
+							<div className='medical'>
+								<img
+									src={value.icon}
+									alt='#'
+									style={{ width: "80px", height: "80px", padding:'10px' }}
+								/>
+								<p>
+									<span>{value.title}</span> Lorem ipsum dolor sit amet
+									consectetur adipisicing elit. Quaerat aliquam beatae fugiat
+									placeat ullam suscipit cumque! Est doloribus quis maxime
+									similique hic 
+								</p>
+							</div>
+						))}
+					</div>
+				</div>
+				<div className='column-right'>
+					<div className='image-container'>
+						<img src={colorflask} alt='color' />
+					</div>
+				</div>
+			</section>
 		</div>
 	);
 }

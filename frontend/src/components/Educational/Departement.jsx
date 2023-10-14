@@ -171,7 +171,7 @@ function Departement() {
 									alt='#'
 									style={{ width: "120px", height: "120px" }}
 								/>
-								{value.title}
+								{value.title} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo aperiam iste eaque nobis obcaecati sunt enim optio a harum. Sit delectus eaque voluptatibus. Numquam similique ad deserunt iure dolore necessitatibus!
 							</div>
 						))}
 					</div>
