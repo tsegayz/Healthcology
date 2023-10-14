@@ -2184,7 +2184,7 @@ body {
 	border: 1px solid rgb(7, 54, 121);
 	border-radius: 50%;
 }
-.department .footer-column p{
+.department .footer-column p {
 	color: rgb(7, 54, 121);
 	text-align: start;
 	margin-left: -20px;
@@ -2198,7 +2198,7 @@ body {
 	justify-content: space-around;
 }
 
-.department .footer-links li a{
+.department .footer-links li a {
 	text-decoration: none;
 	color: rgb(7, 54, 121);
 	font-size: 18px;
@@ -2208,18 +2208,18 @@ body {
 	margin-left: 6em;
 	width: 21em;
 }
-.department .footer-column  .input-container input {
+.department .footer-column .input-container input {
 	height: 40px;
 	border: none;
 	font-size: 17px;
 	padding-left: 8px;
 	box-shadow: 0 0 10px rgba(80, 79, 79, 0.253);
 }
-.department .footer-column  .input-container ::placeholder {
+.department .footer-column .input-container ::placeholder {
 	color: #000000;
 	font-size: 16px;
 }
-.department .footer-column  .input-container button {
+.department .footer-column .input-container button {
 	font-size: 18px;
 	padding: 0 20px;
 	height: 39px;
@@ -2241,49 +2241,49 @@ body {
 	background-color: rgba(5, 28, 70, 0.486);
 	z-index: -1;
 }
-.labs .start .navbar .logo h1{
+.labs .start .navbar .logo h1 {
 	color: white;
 }
-.labs .start .navbar .menu .menu-left{
+.labs .start .navbar .menu .menu-left {
 	margin-left: 55em;
 	width: 500px;
 	color: black;
 }
-.labs .start .navbar .menu .menu-left li a{
+.labs .start .navbar .menu .menu-left li a {
 	padding: 0 10px;
 	font-size: 25px;
 	margin-bottom: 40px;
 }
-.labs .start .flask{
+.labs .start .flask {
 	margin-left: 23em;
 	display: flex;
 	color: white;
 }
-.labs .start .flask .flask-image{
+.labs .start .flask .flask-image {
 	width: 25em;
-	height: 25em;
-	margin-top: 8em;
+	height: 27em;
+	margin-top: 6em;
 }
-.labs .start .flask .first-col{
+.labs .start .flask .first-col {
 	margin-left: 150px;
 	margin-top: 50px;
 	text-align: start;
 }
-.labs .start .flask h1{
+.labs .start .flask h1 {
 	font-size: 50px;
 	font-weight: 100;
 	width: 15em;
 }
-.labs .start .flask p{
+.labs .start .flask p {
 	font-size: 17px;
 	line-height: 30px;
-	font-family: Calibri, 'Trebuchet MS', sans-serif;
+	font-family: Calibri, "Trebuchet MS", sans-serif;
 	width: 40em;
 }
-.labs .start .flask a{
+.labs .start .flask a {
 	text-decoration: none;
 }
-.labs .start .flask a span{
+.labs .start .flask a span {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -2293,7 +2293,61 @@ body {
 	width: 10em;
 	border: white 3px solid;
 }
-.labs .start .flask a h3{ 
+.labs .start .flask a h3 {
 	font-size: 18px;
 	font-weight: 100;
+}
+.labs .two {
+	margin-top: 7em;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+}
+.labs .column-left {
+	flex: 1;
+	padding: 20px;
+	padding-left: 200px;
+}
+.labs .column-left h2{
+	width: 9em;
+	font-size: 30px;
+	font-weight: 100;
+}
+.labs .column-left h2 span{
+	color: #3498db;
+	border-bottom: 2px solid #3498db;
+}
+.labs .row {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px 0;
+	margin-top: 6em;
+}
+.labs .row .medical{
+	display: flex;
+	align-items: center;
+	margin: 10px;
+}
+.labs .row .medical p{
+	font-family: Calibri, 'Trebuchet MS', sans-serif;
+	text-align: start;
+	width: 31em;
+	display: flex;
+	margin-left: 19px;
+	flex-direction: column;
+}
+.labs .row .medical p span{
+	color: #3498db;
+	font-size: 20px;
+	margin-bottom: 9px;
+}
+.labs .column-right {
+	margin-left: -9em;
+	flex: 1;
+	padding: 20px;
+}
+.labs .column-right img {
+	max-width: 100%;
+	height: auto;
 }
