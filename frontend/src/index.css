@@ -2227,3 +2227,73 @@ body {
 	border: none;
 	background-color: rgb(56, 87, 133);
 }
+
+/* ////////// lab experiment /////////////// */
+
+.labs .start {
+	height: 90vh;
+}
+.labs .start {
+	height: 82vh;
+	position: relative;
+}
+.labs .start .overlay {
+	background-color: rgba(5, 28, 70, 0.486);
+	z-index: -1;
+}
+.labs .start .navbar .logo h1{
+	color: white;
+}
+.labs .start .navbar .menu .menu-left{
+	margin-left: 55em;
+	width: 500px;
+	color: black;
+}
+.labs .start .navbar .menu .menu-left li a{
+	padding: 0 10px;
+	font-size: 25px;
+	margin-bottom: 40px;
+}
+.labs .start .flask{
+	margin-left: 23em;
+	display: flex;
+	color: white;
+}
+.labs .start .flask .flask-image{
+	width: 25em;
+	height: 25em;
+	margin-top: 8em;
+}
+.labs .start .flask .first-col{
+	margin-left: 150px;
+	margin-top: 50px;
+	text-align: start;
+}
+.labs .start .flask h1{
+	font-size: 50px;
+	font-weight: 100;
+	width: 15em;
+}
+.labs .start .flask p{
+	font-size: 17px;
+	line-height: 30px;
+	font-family: Calibri, 'Trebuchet MS', sans-serif;
+	width: 40em;
+}
+.labs .start .flask a{
+	text-decoration: none;
+}
+.labs .start .flask a span{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	background-color: #3498db;
+	color: white;
+	width: 10em;
+	border: white 3px solid;
+}
+.labs .start .flask a h3{ 
+	font-size: 18px;
+	font-weight: 100;
+}
