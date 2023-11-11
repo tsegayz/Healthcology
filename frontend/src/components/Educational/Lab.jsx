@@ -5,6 +5,13 @@ import search from "../assets/education/search.jpeg";
 import colorflask from "../assets/education/colorflask.png";
 import image from "../logo.png";
 
+import {
+	BsTwitter,
+	BsLinkedin,
+	BsInstagram,
+	BsFacebook,
+	BsWhatsapp,
+} from "react-icons/bs";
 import { TbLocation } from "react-icons/tb";
 import { IoLocationOutline } from "react-icons/io5";
 import { useState } from "react";
@@ -149,7 +156,7 @@ function Lab() {
 							onFocus={() => setIsSearchActive(true)}
 							onBlur={() => setIsSearchActive(false)}
 							onChange={filterHandler}
-							placeholder="Lab experiments"
+							placeholder='Lab experiments'
 						/>
 					</div>
 					{isSearchActive && (
@@ -199,6 +206,49 @@ function Lab() {
 					)}
 				</div>
 			</section>
+
+			<footer>
+				<div className='logo'>
+					<img src={image} alt='logo' />
+					<h1>
+						H<span>ealthCology</span>
+					</h1>
+				</div>
+				<div className='menu-left'>
+					<li>
+						<a href='/'>Home</a>
+					</li>
+					<li>
+						<a href='/about'>About</a>
+					</li>
+					<li>
+						<a href='/course'>Courses</a>
+					</li>
+					<li>
+						<a href='/contact'>Contact</a>
+					</li>
+				</div>
+				<div className='socials'>
+					<span>
+						<BsTwitter />
+					</span>
+					<span>
+						<BsLinkedin />
+					</span>
+					<span>
+						<BsInstagram />
+					</span>
+					<span>
+						<BsFacebook />
+					</span>
+					<span>
+						<BsWhatsapp />
+					</span>
+				</div>
+				<div class='copyright'>
+					&copy; Copyright <span>Grace.All Rights Reserved</span>
+				</div>
+			</footer>
 		</div>
 	);
 }

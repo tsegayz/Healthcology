@@ -9,6 +9,7 @@ import Near from "./components/Health/Near";
 import Courses from "./components/Educational/Courses";
 import Departement from "./components/Educational/Departement";
 import Lab from "./components/Educational/Lab";
+import About from "./components/About";
 
 function App() {
 	return (
@@ -18,6 +19,9 @@ function App() {
 					<Switch>
 						<Route exact path='/'>
 							<Home footer={footerList} />
+						</Route>
+						<Route  exact path='/about'>
+							<About/>
 						</Route>
 						<Route exact path='/login'>
 							<Login />
