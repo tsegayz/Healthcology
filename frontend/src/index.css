@@ -2555,7 +2555,7 @@ body {
 }
 .about-page .content {
 	position: absolute;
-	top: 33%;
+	top: 15%;
 	left: 23%;
 	text-align: center;
 	z-index: 1;
@@ -2583,4 +2583,209 @@ body {
 }
 .about-page .content .list .container p {
 	margin: 0;
+}
+.about-page .first {
+	display: flex;
+	margin: 200px 0 100px 0;
+}
+.about-page .first .top {
+	padding: 20px 30px 20px 25em;
+	text-align: start;
+	color: white;
+	z-index: 1;
+	background-color: #283650;
+}
+.about-page .first .top h1 {
+	font-size: 30px;
+	width: 170px;
+	font-family: Arial, sans-serif;
+	font-weight: 100;
+}
+.about-page .first .top p {
+	width: 350px;
+}
+.about-page .first .services {
+	position: absolute;
+	left: 37em;
+	top: 58em;
+	width: 100%;
+	z-index: -1;
+	display: flex;
+	color: white;
+	padding: 60px 0 40px 17em;
+	background-color: rgba(102, 102, 102, 0.336);
+}
+.about-page .first .services .item {
+	border-right: 2px solid rgba(128, 128, 128, 0.801);
+	padding: 0 60px;
+}
+.about-page .first .services .item p {
+	margin-top: 0;
+	font-size: 20px;
+}
+.about-page .first .description {
+	position: absolute;
+	top: 80em;
+	left: 32em;
+}
+.about-page .first .description h2 {
+	font-weight: 100;
+	font-size: 24px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	width: 40em;
+	border-bottom: 2px solid #2453ac;
+	padding-bottom: 10px;
+	margin-top: 30px;
+}
+.about-page .first .description h3 {
+	display: flex;
+	align-items: center;
+	margin-left: 17em;
+	font-size: 20px;
+	font-weight: 100;
+}
+.about-page .first .description h3::before,
+.about-page .first .description h3::after {
+	content: "";
+	width: 40px;
+	border-bottom: 1px solid #0c2781;
+	margin: 0 10px;
+}
+.about-page .first .description .detail {
+	margin-top: 50px;
+}
+.about-page .first .description .detail .row {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+.about-page .first .description .detail .row h1 {
+	color: #0c2781;
+	margin-bottom: 0px;
+}
+.about-page .first .description .detail .row p {
+	text-align: start;
+	width: 40em;
+	margin-left: 40px;
+}
+.about-page .second {
+	position: absolute;
+	top: 120em;
+	left: 40em;
+	display: flex;
+	margin-bottom: 100px;
+}
+.about-page .second .one {
+	margin: 5em 0 0 6em;
+}
+.about-page .second .one h1 {
+	margin: 0;
+	font-size: 60px;
+	color: #0c2781;
+}
+.about-page .second .one h2 {
+	width: 7em;
+}
+.about-page .second .one:before,
+.about-page .second .one:after {
+	content: "";
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	top: 50%;
+	z-index: -1;
+	transform: translateY(-50%);
+}
+.about-page .second .one:before {
+	background: linear-gradient(to bottom, #0c2781, #5d9cec);
+	left: -25px;
+}
+.about-page .second .one:after {
+	width: 280px;
+	height: 280px;
+	top: 70%;
+	background-color: white;
+	box-shadow: 0 0 15px rgba(158, 158, 158, 0.671);
+	right: 13.5em;
+}
+.about-page .second .two {
+	margin-left: 10em;
+	text-align: start;
+}
+.about-page .second .two .items h2 {
+	margin: 0;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 20px;
+	color: #2453ac;
+}
+
+.about-page footer {
+	position: absolute;
+	top: 150em;
+	width: 100%;
+	box-shadow: 0 1px 10px 10px rgba(231, 231, 231, 0.267);
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.about-page footer .logo {
+	color: rgba(1, 29, 65, 0.836);
+	margin-left: -100px;
+}
+.about-page footer .menu-left {
+	font-size: 22px;
+	display: flex;
+	list-style: none;
+	margin-bottom: 1em;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.about-page footer .menu-left li {
+	margin: 10px 28px;
+	font-size: 18px;
+	position: relative;
+}
+
+.about-page footer .menu-left li a {
+	color: rgb(2, 42, 95);
+	text-decoration: none;
+	position: relative;
+}
+
+.about-page footer .menu-left li a::after {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: rgb(2, 42, 95);
+	transition: width 0.3s ease-in-out;
+}
+
+.about-page footer .menu-left li a:hover::after {
+	width: 100%;
+}
+
+.about-page footer .socials {
+	font-size: 20px;
+	margin: 10px;
+}
+.about-page footer .socials span {
+	border-radius: 50%;
+	margin-right: 28px;
+	padding: 7px 11px;
+	padding-top: 12px;
+	color: white;
+	background-color: rgba(1, 29, 65, 0.836);
+}
+.about-page footer .socials span:hover {
+	color: rgb(2, 42, 95);
+	background-color: white;
+}
+.about-page footer .copyright {
+	color: rgb(2, 42, 95);
+	margin: 10px;
 }
