@@ -10,6 +10,7 @@ import Courses from "./components/Educational/Courses";
 import Departement from "./components/Educational/Departement";
 import Lab from "./components/Educational/Lab";
 import About from "./components/About";
+import SignUp from "./components/Signup";
 
 function App() {
 	return (
@@ -25,6 +26,9 @@ function App() {
 						</Route>
 						<Route exact path='/login'>
 							<Login />
+						</Route>
+						<Route exact path='/signup'>
+							<SignUp />
 						</Route>
 						<Route exact path='/near'>
 							<Near/>

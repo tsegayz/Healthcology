@@ -732,13 +732,13 @@ body {
 	color: white;
 	display: flex;
 	align-items: center;
-	font-size: 22px;
+	font-size: 17px;
 	background-color: rgb(0, 0, 0);
 	border-radius: 0 30px 30px 30px;
-	height: 2em;
-	padding: 0 20px;
+	height: 2.5em;
+	padding: 0 24px;
 }
-.header a span:hover {
+.login-page .header a span:hover {
 	color: white;
 	transition: all 0.4s;
 	background-color: rgba(0, 0, 0, 0.836);
@@ -781,7 +781,7 @@ body {
 	left: 0;
 	display: flex;
 	flex-direction: column;
-	padding-top: 70px;
+	padding-top: 50px;
 }
 .login .part-two .content .form {
 	margin-left: 60px;
@@ -795,7 +795,9 @@ body {
 	color: rgb(27, 61, 110);
 }
 .login .part-two .user-input-container,
-.login .part-two .password-input-container {
+.login .part-two .email-input-container,
+.login .part-two .password-input-container
+ {
 	position: relative;
 	display: inline-block;
 	border: 2px solid #cce4ffb0;
@@ -809,7 +811,7 @@ body {
 .login .part-two input {
 	border: none;
 	outline: none;
-	font-size: 16px;
+	font-size: 14px;
 	padding: 5px;
 	background: transparent;
 	z-index: 2;
@@ -822,11 +824,29 @@ body {
 	padding: 0 5px;
 	z-index: 1;
 	color: #5f5f5f;
-	font-size: 18px;
+	font-size: 14px;
 	transition: top 0.3s ease-out, left 0.3s ease-out, font-size 0.3s ease-out,
 		color 0.3s ease-out;
 }
-
+.login .part-two .email-input-container .active {
+    top: -0.7rem;
+    left: 12px;
+    font-size: 0.75rem;
+}
+.login .part-two .error {
+	position: absolute;
+	bottom: -30px;
+	left: 15px;
+	font-size: 11px;
+	color: red;
+}
+.login .part-two .errorPassword {
+	position: absolute;
+	bottom: 58px;
+	right: -20px;
+	font-size: 11px;
+	color: red;
+}
 .login .part-two input:focus + label,
 .login .part-two input:not(:placeholder-shown) + label {
 	top: -10px;
@@ -838,24 +858,28 @@ body {
 	border-radius: 50px;
 	background-color: rgb(27, 61, 110);
 	padding: 12px 0;
-	font-size: 20px;
+	font-size: 17px;
 	color: white;
 	border: none;
 }
 .login .part-two .content .form h3 {
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 100;
 	color: rgb(27, 61, 110);
 }
-.content .signup {
+.login .content .signup {
 	text-align: start;
-	margin-top: 15px;
+	margin-top: 5px;
 	margin-left: 55px;
-	width: 100px;
+	width: 23em;
 }
-.content .signup p {
+.login .content .signup p {
 	font-size: 17px;
 }
+.sign .content {
+	width: 29em;
+}
+
 /* /////////// education page ////////////// */
 .education-page {
 	background-color: #f9fdff;
