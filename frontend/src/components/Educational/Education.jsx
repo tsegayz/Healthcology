@@ -3,7 +3,7 @@ import image from "../logo.png";
 import student from "../assets/education/student.png";
 import edu from "../assets/education/edu.png";
 import { useState } from "react";
-// import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { RiSearch2Line } from "react-icons/ri";
 import {
@@ -27,13 +27,12 @@ import {
 	BsPatchQuestion,
 	BsQuestionCircleFill,
 } from "react-icons/bs";
-import { GiBookshelf } from "react-icons/gi";
 import { VscNotebook } from "react-icons/vsc";
 import { TbLocation } from "react-icons/tb";
 import { SlBadge } from "react-icons/sl";
 import { FaGraduationCap, FaResearchgate } from "react-icons/fa";
 import { AiFillExperiment } from "react-icons/ai";
-import { GiMicroscope, GiTestTubes, GiArchiveResearch } from "react-icons/gi";
+import { GiBookshelf, GiMicroscope, GiTestTubes, GiArchiveResearch } from "react-icons/gi";
 import { SiGitbook } from "react-icons/si";
 
 function Education() {
@@ -173,21 +172,21 @@ function Education() {
 					<ul className='menu'>
 						<div className='menu-left'>
 							<li>
-								<a href='/'>Home</a>
+								<Link to='/'>Home</Link>
 							</li>
 							<li>
-								<a href='/about'>About</a>
+								<Link to='/about'>About</Link>
 							</li>
 							<li>
-								<a href='/contact'>Contact</a>
+								<Link to='/contact'>Contact</Link>
 							</li>
 						</div>
 						<li>
-							<a href='/login'>
+							<Link to='/login'>
 								<span>
 									<IoLogInOutline style={{ fontSize: "25px" }} /> <p> Login </p>
 								</span>
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</div>
@@ -197,8 +196,7 @@ function Education() {
 				<h1> What do you need?</h1>
 				<div className='category-container'>
 					{education.map((item) => (
-						<a
-							href={item.link}
+						<p
 							className={`category-map ${
 								selectedItem?.id === item.id ? "selected" : ""
 							}`}
@@ -207,7 +205,7 @@ function Education() {
 						>
 							<span>{item.icon}</span>
 							<p>{item.name}</p>
-						</a>
+						</p>
 					))}
 				</div>
 				<div className='search-bar'>
@@ -227,7 +225,7 @@ function Education() {
 					<div className='search-results'>
 						{filteredPlaces.length === 0 && (
 							<span>
-								<a>
+								<Link to='/near'>
 									<TbLocation
 										style={{
 											fontSize: "30px",
@@ -239,11 +237,11 @@ function Education() {
 										}}
 									/>
 									Nearby
-								</a>
+								</Link>
 							</span>
 						)}
 						{filteredPlaces.map((value) => (
-							<a
+							<Link to='/course'
 								className='search-item'
 								target=''
 								key={value._id}
@@ -264,7 +262,7 @@ function Education() {
 									</span>
 									<p> {value} </p>
 								</div>
-							</a>
+							</Link>
 						))}
 					</div>
 				)}
@@ -289,14 +287,14 @@ function Education() {
 							voluptatibus tempora officiis temporibus soluta laborum qui.
 							Voluptat
 						</p>
-						<a href='/login'>
+						<Link to='/departements'>
 							<span>
-								<h3> Get Started </h3>
+								<h3> Departements </h3>
 								<BsArrowRight
-									style={{ fontSize: "20px", marginLeft: "10px" }}
+									style={{ fontSize: "26px", marginLeft: "15px" }}
 								/>
 							</span>
-						</a>
+						</Link>
 					</div>
 					<div className='second-col'>
 						<div className='first'>
@@ -479,16 +477,16 @@ function Education() {
 				</div>
 				<div className='menu-left'>
 					<li>
-						<a href='/'>Home</a>
+						<Link to='/'>Home</Link>
 					</li>
 					<li>
-						<a href='/about'>About</a>
+						<Link to='/about'>About</Link>
 					</li>
 					<li>
-						<a href='/course'>Courses</a>
+						<Link to='/courses'>Courses</Link>
 					</li>
 					<li>
-						<a href='/contact'>Contact</a>
+						<Link to='/contact'>Contact</Link>
 					</li>
 				</div>
 				<div className='socials'>

@@ -1,9 +1,12 @@
 import image from "../logo.png";
+import image1 from "../assets/education/courseEdu.jpg";
 import course from "../assets/education/course.png";
 import dsa from "../assets/education/dsa.png";
-
+import { Link } from "react-router-dom";
+import { GiMicroscope, GiTestTubes, GiArchiveResearch } from "react-icons/gi";
+import { BsPatchQuestion } from "react-icons/bs";
 import { IoLogInOutline, IoLocationOutline } from "react-icons/io5";
-import { RiSearch2Line } from "react-icons/ri";
+import { RiSearch2Line, RiApps2Line } from "react-icons/ri";
 import { TbLocation } from "react-icons/tb";
 import { BiLogoFacebook, BiLogoLinkedin, BiLogoTwitter } from "react-icons/bi";
 import { useState } from "react";
@@ -27,6 +30,39 @@ function Courses() {
 	const handleItemClick = (item) => {
 		setSelectedItem(item);
 	};
+
+	const category = [
+		{
+			id: 1,
+			icon: <RiApps2Line />,
+			name: "All",
+			link: "/departements",
+		},
+		{
+			id: 2,
+			icon: <GiMicroscope />,
+			name: "Courses",
+			link: "/courses",
+		},
+		{
+			id: 3,
+			icon: <GiTestTubes />,
+			name: "Lab experiments",
+			link: "/experiments",
+		},
+		{
+			id: 4,
+			icon: <BsPatchQuestion />,
+			name: "Questions",
+			link: "/questions",
+		},
+		{
+			id: 5,
+			icon: <GiArchiveResearch />,
+			name: "Researches",
+			link: "/researches",
+		},
+	];
 	const recommendedCourses = [
 		{
 			id: 1,
@@ -108,55 +144,90 @@ function Courses() {
 					<ul className='menu'>
 						<div className='menu-left'>
 							<li>
-								<a href='/'>Home</a>
+								<Link to='/'>Home</Link>
 							</li>
 							<li>
-								<a href='/about'>About</a>
+								<Link to='/about'>About</Link>
 							</li>
 							<li>
-								<a href='/contact'>Contact</a>
+								<Link to='/contact'>Contact</Link>
 							</li>
 						</div>
 						<li>
-							<a href='/login'>
+							<Link to='/login'>
 								<span>
 									<IoLogInOutline style={{ fontSize: "25px" }} /> <p> Login </p>
 								</span>
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</div>
 			</div>
+			<section className='container'>
+				<div className='image-container'>
+					<img src={image1} alt='logo' />
+				</div>
+				<div className='text'>
+					<h3> Courses</h3>
+					<p> Enquire topics </p>
+				</div>
+			</section>
+
 			<section className='search'>
-				<div className='search-container'>
-					<h1> What do you want to learn today?</h1>
-					<div className='search-bar'>
-						<input
-							className={`input-field ${isSearchActive ? "active" : ""}`}
-							type='text'
-							onFocus={() => setIsSearchActive(true)}
-							onBlur={() => setIsSearchActive(false)}
-							onChange={filterHandler}
-							placeholder='Search for courses'
+				<p>
+					<h2>12 </h2> Courses
+				</p>
+				<div className='search-bar'>
+					<input
+						className={`input-field ${isSearchActive ? "active" : ""}`}
+						type='text'
+						onFocus={() => setIsSearchActive(true)}
+						onBlur={() => setIsSearchActive(false)}
+						onChange={filterHandler}
+						placeholder='Search for courses'
+					/>
+					<button className='search-icon'>
+						<RiSearch2Line
+							style={{
+								color: "white",
+								fontSize: "38px",
+								padding: "5px",
+								borderRadius: "10px",
+								backgroundColor: "rgb(0, 58, 109)",
+							}}
 						/>
-						<button className='search-icon'>
-							<RiSearch2Line
-								style={{
-									color: "white",
-									fontSize: "38px",
-									padding: "5px",
-									borderRadius: "10px",
-									backgroundColor: "rgb(0, 58, 109)",
-								}}
-							/>
-						</button>
-					</div>
-					{isSearchActive && (
-						<div className='search-results'>
-							{filteredPlaces.length === 0 && (
-								<span>
-									<a href='nth'>
-										<TbLocation
+					</button>
+				</div>
+				{isSearchActive && (
+					<div className='search-results'>
+						{filteredPlaces.length === 0 && (
+							<span>
+								<Link to='nth'>
+									<TbLocation
+										style={{
+											fontSize: "30px",
+											padding: "5px",
+											border: "rgb(51, 51, 51) 1px solid",
+											borderRadius: "50%",
+											color: "black",
+											marginRight: "10px",
+										}}
+									/>
+									Nearby
+								</Link>
+							</span>
+						)}
+						{filteredPlaces.map((value) => (
+							<Link
+								to='nth'
+								className='search-item'
+								target=''
+								key={value._id}
+								onClick={() => handleItemClick(value)}
+							>
+								<div className='result-name'>
+									<span>
+										<IoLocationOutline
 											style={{
 												fontSize: "30px",
 												padding: "5px",
@@ -166,99 +237,25 @@ function Courses() {
 												marginRight: "10px",
 											}}
 										/>
-										Nearby
-									</a>
-								</span>
-							)}
-							{filteredPlaces.map((value) => (
-								<a
-									href='nth'
-									className='search-item'
-									target=''
-									key={value._id}
-									onClick={() => handleItemClick(value)}
-								>
-									<div className='result-name'>
-										<span>
-											<IoLocationOutline
-												style={{
-													fontSize: "30px",
-													padding: "5px",
-													border: "rgb(51, 51, 51) 1px solid",
-													borderRadius: "50%",
-													color: "black",
-													marginRight: "10px",
-												}}
-											/>
-										</span>
-										<p> {value} </p>
-									</div>
-								</a>
-							))}
-						</div>
-					)}
-					<div
-						style={{ fontSize: "20px", textAlign: "start", marginTop: "50px" }}
-					>
-						Sugesstion{" "}
-						<a
-							href='/about'
-							style={{ marginLeft: "20px", color: "rgb(0, 86, 161)" }}
-						>
-							learn about us
-						</a>
-					</div>
-				</div>
-				<div className='img-container'>
-					<img src={course} alt='course' />
-				</div>
-			</section>
-			<section className='part-two'>
-				<div className='course-container' id='slider3'>
-					<h2>Recommended Courses</h2>
-					<div className='course-grid'>
-						{recommendedCourses.map((course) => (
-							<div className='course-item' key={course.id}>
-								<img src={course.image} alt={course.title} />
-								<h3>{course.title}</h3>
-								<p> Rating : {course.likes} </p>
-								<a href={`coursedetail/${course.id}`}>
-									<button>View Details</button>
-								</a>
-							</div>
+									</span>
+									<p> {value} </p>
+								</div>
+							</Link>
 						))}
 					</div>
-				</div>
+				)}
 			</section>
 			<section className='part-two'>
 				<div className='course-container' id='slider3'>
-					<h2>New Courses</h2>
 					<div className='course-grid'>
 						{recommendedCourses.map((course) => (
 							<div className='course-item' key={course.id}>
 								<img src={course.image} alt={course.title} />
 								<h3>{course.title}</h3>
 								<p> Rating : {course.likes} </p>
-								<a href={`coursedetail/${course.id}`}>
+								<Link to={`coursedetail/${course.id}`}>
 									<button>View Details</button>
-								</a>
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
-			<section className='part-two'>
-				<div className='course-container' id='slider3'>
-					<h2>Grow your skill set</h2>
-					<div className='course-grid'>
-						{recommendedCourses.map((course) => (
-							<div className='course-item' key={course.id}>
-								<img src={course.image} alt={course.title} />
-								<h3>{course.title}</h3>
-								<p> Rating : {course.likes} </p>
-								<a href={`coursedetail/${course.id}`}>
-									<button>View Details</button>
-								</a>
+								</Link>
 							</div>
 						))}
 					</div>
@@ -286,18 +283,18 @@ function Courses() {
 							© 2023 helthcology Inc. All rights reserved.
 						</div>
 						<div className='social-icons-right'>
-							<a href='link'>
+							<Link to='link'>
 								<AiOutlineInstagram />
-							</a>
-							<a href='link'>
+							</Link>
+							<Link to='link'>
 								<BiLogoFacebook />
-							</a>
-							<a href='link'>
+							</Link>
+							<Link to='link'>
 								<BiLogoLinkedin />
-							</a>
-							<a href='link'>
+							</Link>
+							<Link to='link'>
 								<BiLogoTwitter />
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import first from "./assets/home/first.jpeg";
 import second from "./assets/home/second.jpeg";
@@ -35,24 +36,24 @@ function Home({ footer }) {
 		{
 			icon: <GiMicroscope />,
 			title: "Learning page",
-			link: "./education",
+			link: "/education",
 			desc: "Login/Signup as a student and exploit all the benefits you encounter",
 		},
 		{
 			icon: <FaClockRotateLeft />,
 			title: "Access near",
-			link: "./near",
+			link: "/near",
 			desc: "Login/Signup as a normal user and access search for the nearby hospitals and pharmacy",
 		},
 		{
 			icon: <SiWpexplorer />,
 			title: "Explore about us",
-			link: "./about",
+			link: "/about",
 			desc: "Any questions? Then find out more about us on our page ",
 		},
 	];
 	const selection = [
-		{
+		{ 
 			icon: <GiStethoscope />,
 			title: "Hospital",
 			desc: "look for the hospital/ health care institution and the services they provide",
@@ -132,14 +133,14 @@ function Home({ footer }) {
 							voluptatibus tempora officiis temporibus soluta laborum qui.
 							Voluptat
 						</p>
-						<a href='/login'>
+						<Link to='/login'>
 							<span>
 								<h3> Get Started </h3>{" "}
 								<BsArrowRight
 									style={{ fontSize: "20px", marginLeft: "10px" }}
 								/>{" "}
 							</span>
-						</a>
+						</Link>
 					</div>
 					<div className='second-col'>
 						<div className='first'>
@@ -167,13 +168,13 @@ function Home({ footer }) {
 				<div className='services'>
 					{services.map((value) => {
 						return (
-							<a href={value.link}>
+							<Link to={value.link}>
 								<div className='list-container'>
 									<div className='icon-container'> {value.icon}</div>
 									<h2> {value.title} </h2>
 									<p> {value.desc} </p>
 								</div>
-							</a>
+							</Link>
 						);
 					})}
 				</div>
@@ -239,14 +240,14 @@ function Home({ footer }) {
 								<>
 									<h3> {selectedItem.name} </h3>
 									<p> {selectedItem.description} </p>
-									<a href='/login'>
+									<Link to='/login'>
 										<span>
 											<h3> Get Started </h3>
 											<BsArrowRight
 												style={{ fontSize: "55px", marginLeft: "10px" }}
-											/>{" "}
+											/>
 										</span>
-									</a>
+									</Link>
 								</>
 							)}
 						</div>

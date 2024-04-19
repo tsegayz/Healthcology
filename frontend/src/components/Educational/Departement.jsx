@@ -1,4 +1,4 @@
-import { IoLogInOutline } from "react-icons/io5";
+import { IoLogInOutline, IoLocationOutline } from "react-icons/io5";
 import {
 	FaFacebook,
 	FaInstagram,
@@ -6,12 +6,16 @@ import {
 	FaStethoscope,
 	FaTwitter,
 } from "react-icons/fa";
+import { BsPatchQuestion } from "react-icons/bs";
+import { RiApps2Line, RiSearch2Line } from "react-icons/ri";
 import { FaUserDoctor } from "react-icons/fa6";
 import { LiaSyringeSolid } from "react-icons/lia";
-import { GiBrain } from "react-icons/gi";
-import { AiFillHeart } from "react-icons/ai";
-import { HiPlusSm } from "react-icons/hi";
-
+import {
+	GiBrain,
+	GiMicroscope,
+	GiTestTubes,
+	GiArchiveResearch,
+} from "react-icons/gi";
 import image from "../logo.png";
 import dep from "../assets/education/depart.jpg";
 import dep2 from "../assets/education/dep2.jpeg";
@@ -20,8 +24,11 @@ import heart from "../assets/education/heart.png";
 import lung from "../assets/education/lungs.png";
 import uteres from "../assets/education/uteres.png";
 import anest from "../assets/education/scissor.png";
-import medic from "../assets/education/medic.jpeg";
-import back from "../assets/education/depb.png";
+import { TbLocation } from "react-icons/tb";
+import dsa from "../assets/education/dsa.png";
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Departement() {
 	const customBlobShape = (
@@ -45,6 +52,38 @@ function Departement() {
 		{ icon: <LiaSyringeSolid />, title: "Anesthesia" },
 	];
 
+	const searchCategory = [
+		{
+			id: 1,
+			icon: <RiApps2Line />,
+			name: "All",
+			link: "/departements",
+		},
+		{
+			id: 2,
+			icon: <GiMicroscope />,
+			name: "Courses",
+			link: "/courses",
+		},
+		{
+			id: 3,
+			icon: <GiTestTubes />,
+			name: "Lab experiments",
+			link: "/experiments",
+		},
+		{
+			id: 4,
+			icon: <BsPatchQuestion />,
+			name: "Questions",
+			link: "/questions",
+		},
+		{
+			id: 5,
+			icon: <GiArchiveResearch />,
+			name: "Researches",
+			link: "/researches",
+		},
+	];
 	const diagnostic = [
 		{ icon: brain, title: "Neurology" },
 		{ icon: lung, title: "pulmonology" },
@@ -55,6 +94,73 @@ function Departement() {
 		{ icon: anest, title: "Scissors" },
 		{ icon: anest, title: "Scissors" },
 	];
+	const recommendedCourses = [
+		{
+			id: 1,
+			title: "Course 1",
+			image: dsa,
+			likes: 4,
+		},
+		{
+			id: 2,
+			title: "Course 1",
+			image: dsa,
+			likes: 4,
+		},
+		{
+			id: 3,
+			title: "Course 1",
+			image: dsa,
+			likes: 4,
+		},
+		{
+			id: 4,
+			title: "Course 1",
+			image: dsa,
+			likes: 4,
+		},
+		{
+			id: 5,
+			title: "Course 2",
+			image: dsa,
+			likes: 3,
+		},
+		{
+			id: 6,
+			title: "Course 2",
+			image: dsa,
+			likes: 3,
+		},
+		{
+			id: 7,
+			title: "Course 2",
+			image: dsa,
+			likes: 3,
+		},
+		{
+			id: 8,
+			title: "Course 2",
+			image: dsa,
+			likes: 3,
+		},
+	];
+	const [selectedItem, setSelectedItem] = useState(null);
+	const [isSearchActive, setIsSearchActive] = useState(false);
+
+	const data = ["balcha", "sarbet", "pharma", "tarik"];
+	const [filteredPlaces, setFilteredPlaces] = useState([]);
+	const filterHandler = (e) => {
+		const searchWord = e.target.value;
+
+		if (searchWord === "") {
+			setFilteredPlaces([]);
+		} else {
+			setFilteredPlaces(data);
+		}
+	};
+	const handleItemClick = (item) => {
+		setSelectedItem(item);
+	};
 	return (
 		<div className='department'>
 			<div className='header'>
@@ -76,7 +182,7 @@ function Departement() {
 						<span style={{ color: "rgb(0, 56, 127)" }}>
 							Look for departements{" "}
 						</span>
-						and choose of your liking
+						and the choise of your liking
 					</h1>
 					<p>
 						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur,
@@ -95,181 +201,132 @@ function Departement() {
 					</div>
 				</div>
 			</section>
-			<section className='sec-two'>
-				<div className='part-one'>
-					<h1>
-						<p style={{ color: "rgb(0, 56, 127)" }}>Wide range of</p>
-						Medical departements to join
-					</h1>
-					<div>
-						<div className='image-container'>
-							<img src={dep2} alt='first' className='custom-border-radius-1' />
-						</div>
-						{customBlobShape}
-					</div>
-				</div>
-				<div className='part-two'>
-					{category.map((item) => (
-						<div className='items'>
-							<span
+			<div className='category-container'>
+				<section className='search'>
+					<p>
+						<h2>12 </h2> Courses
+					</p>
+					<div className='search-bar'>
+						<input
+							className={`input-field ${isSearchActive ? "active" : ""}`}
+							type='text'
+							onFocus={() => setIsSearchActive(true)}
+							onBlur={() => setIsSearchActive(false)}
+							onChange={filterHandler}
+							placeholder='Search for courses'
+						/>
+						<button className='search-icon'>
+							<RiSearch2Line
 								style={{
-									backgroundColor: "rgb(5, 39, 88)",
-									boxShadow: "0 0 10px rgba(0, 0, 0, 0.414)",
-									border: "6px solid white",
 									color: "white",
-									borderRadius: "50%",
-									fontSize: "40px",
-									padding: "15px 20px",
-									paddingTop: "20px",
+									fontSize: "38px",
+									padding: "5px",
+									borderRadius: "10px",
+									backgroundColor: "rgb(0, 58, 109)",
 								}}
-							>
-								{item.icon}
-							</span>
-							<p style={{ marginTop: "30px" }}> {item.title} </p>
+							/>
+						</button>
+					</div>
+					{isSearchActive && (
+						<div className='search-results'>
+							{filteredPlaces.length === 0 && (
+								<span>
+									<Link to='nth'>
+										<TbLocation
+											style={{
+												fontSize: "30px",
+												padding: "5px",
+												border: "rgb(51, 51, 51) 1px solid",
+												borderRadius: "50%",
+												color: "black",
+												marginRight: "10px",
+											}}
+										/>
+										Nearby
+									</Link>
+								</span>
+							)}
+							{filteredPlaces.map((value) => (
+								<Link
+									to='nth'
+									className='search-item'
+									target=''
+									key={value._id}
+									onClick={() => handleItemClick(value)}
+								>
+									<div className='result-name'>
+										<span>
+											<IoLocationOutline
+												style={{
+													fontSize: "30px",
+													padding: "5px",
+													border: "rgb(51, 51, 51) 1px solid",
+													borderRadius: "50%",
+													color: "black",
+													marginRight: "10px",
+												}}
+											/>
+										</span>
+										<p> {value} </p>
+									</div>
+								</Link>
+							))}
+						</div>
+					)}
+				</section>
+				<div className='category'>
+					{searchCategory.map((item) => (
+						<p
+							className={`category-map ${
+								selectedItem?.id === item.id ? "selected" : ""
+							}`}
+							key={item.id}
+						>
+							<span>{item.icon}</span>
+							<p>{item.name}</p>
+						</p>
+					))}
+				</div>
+				<section className='list'>
+					<div className='course-container' id='slider3'>
+						<div className='course-grid'>
+							{recommendedCourses.map((course) => (
+								<div className='course-item' key={course.id}>
+									<img src={course.image} alt={course.title} />
+									<h3>{course.title}</h3>
+									<p> Rating : {course.likes} </p>
+								</div>
+							))}
+						</div>
+					</div>
+				</section>
+			</div>
+			<div className='last-section'>
+				<div class='dot left'></div>
+				<div class='dot right'></div>
+				<hr class='horizontal-line' />
+				<div className='pillar'>
+					{diagnostic.slice(0, 3).map((item) => (
+						<div className='container'>
+							<div className='small-icon'>
+								<img
+									src={item.icon}
+									alt='#'
+									style={{ width: "55px", height: "40px" }}
+								/>
+							</div>
+							<div className='sec'>
+								<span> {item.title}</span>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									molestiae totam sed tenetur
+								</p>
+							</div>
 						</div>
 					))}
 				</div>
-			</section>
-			<section className='sec-three'>
-				<div className='first'>
-					<h2>
-						World leader <span>in diangnostic</span>
-					</h2>
-					<p>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione
-						quisquam assumenda suscipit laboriosam quod. Deserunt, rerum. Sunt
-					</p>
-					<button>Choose department</button>
-				</div>
-				<div className='second'>
-					<div className='matrix'>
-						{diagnostic.map((value, index) => (
-							<div className='container' key={index}>
-								<img
-									src={value.icon}
-									alt='#'
-									style={{ height: "90px", width: "6.5em" }} // Adjust the width and height as needed
-								/>
-								{value.title}
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
-			<section className='sec-four'>
-				<div className='part-one'>
-					<p> Chosen fields </p>
-					<h2> Best Fields For Medical students </h2>
-				</div>
-				<div className='part-two'>
-					<img src={medic} alt='medic' />
-					<div className='container'>
-						{diagnostic.slice(0, 6).map((value) => (
-							<div className='medical'>
-								<img
-									src={value.icon}
-									alt='#'
-									style={{ width: "120px", height: "120px" }}
-								/>
-								{value.title} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo aperiam iste eaque nobis obcaecati sunt enim optio a harum. Sit delectus eaque voluptatibus. Numquam similique ad deserunt iure dolore necessitatibus!
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
-			<section className='last'>
-				<div className='part-one'>
-					<section className='one'>
-						<img
-							src={back}
-							alt='back'
-							style={{
-								position: "absolute",
-								zIndex: "1",
-								height: "47em",
-								width: "87em",
-								marginLeft: "35em",
-								marginTop: "-6em",
-							}}
-						/>
-						<div className='circle'>
-							<HiPlusSm
-								style={{
-									fontSize: "63px",
-									color: "white",
-									position: "relative",
-									left: "72%",
-									top: "23px",
-									zIndex: "9999",
-									transform: "translate(-50%, -50%)",
-								}}
-							/>
-							<AiFillHeart
-								style={{
-									fontSize: "80px",
-									marginTop: "10px",
-									color: "rgb(88, 144, 223)",
-								}}
-							/>
-						</div>
-						<div className='text'>
-							<h4>
-								MEDICAL <span> INFOGRAPHIC </span>
-							</h4>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. odio?
-								In nemo sapiente ipsa?
-							</p>
-						</div>
-					</section>
-					<section className='two'>
-						{diagnostic.slice(0, 6).map((item, index) => (
-							<div className={`container item-${index}`} key={index}>
-								<div className='small-icon'>
-									<img
-										src={item.icon}
-										alt='#'
-										style={{ width: "70px", height: "55px" }}
-									/>
-								</div>
-								<div className='sec'>
-									<span> {item.title}</span>
-									<p>
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										molestiae totam sed tenetur
-									</p>
-								</div>
-							</div>
-						))}
-					</section>
-				</div>
-
-				<div className='part-two'>
-					<div class='dot left'></div>
-					<div class='dot right'></div>
-					<hr class='horizontal-line' />
-					<div className='pillar'>
-						{diagnostic.slice(0, 3).map((item) => (
-							<div className='container'>
-								<div className='small-icon'>
-									<img
-										src={item.icon}
-										alt='#'
-										style={{ width: "55px", height: "40px" }}
-									/>
-								</div>
-								<div className='sec'>
-									<span> {item.title}</span>
-									<p>
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										molestiae totam sed tenetur
-									</p>
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
+			</div>
+			
 			<footer className='footer'>
 				<div className='footer-column'>
 					<div className='logo'>

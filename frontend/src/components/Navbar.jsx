@@ -57,13 +57,13 @@ function NavBar() {
 				<ul className='menu'>
 					<div className='menu-left'>
 						<li>
-							<a href='/'>Home</a>
+							<Link to='/'>Home</Link>
 						</li>
 						<li>
-							<a href='/about'>About</a>
+							<Link to='/about'>About</Link>
 						</li>
 						<li>
-							<a href='/contact'>Contact</a>
+							<Link to='/contact'>Contact</Link>
 						</li>
 					</div>
 					<div className='search-container'>
@@ -131,13 +131,12 @@ function NavBar() {
 							</div>
 						)}
 					</div>
-
 					<li>
-						<a href='/login'>
+						<Link to='/login'>
 							<span>
 								<IoLogInOutline style={{ fontSize: "25px" }} /> <p> Login </p>
 							</span>
-						</a>
+						</Link>
 					</li>
 				</ul>
 			</div>
