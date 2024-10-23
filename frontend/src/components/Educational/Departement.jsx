@@ -1,24 +1,17 @@
 import { IoLogInOutline, IoLocationOutline } from "react-icons/io5";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaUserDoctor, FaXRay } from "react-icons/fa6";
+import { TbDental } from "react-icons/tb";
+import { Link, useHistory } from "react-router-dom";
 import {
-	FaFacebook,
-	FaInstagram,
-	FaLinkedin,
-	FaStethoscope,
-	FaTwitter,
-} from "react-icons/fa";
-import { BsPatchQuestion } from "react-icons/bs";
-import { RiApps2Line, RiSearch2Line } from "react-icons/ri";
-import { FaUserDoctor } from "react-icons/fa6";
-import { LiaSyringeSolid } from "react-icons/lia";
-import {
-	GiBrain,
-	GiMicroscope,
-	GiTestTubes,
-	GiArchiveResearch,
-} from "react-icons/gi";
+	RiApps2Line,
+	RiSearch2Line,
+	RiNurseLine,
+	RiPsychotherapyLine,
+} from "react-icons/ri";
+import { MdOutlineLocalPharmacy } from "react-icons/md";
 import image from "../logo.png";
 import dep from "../assets/education/depart.jpg";
-import dep2 from "../assets/education/dep2.jpeg";
 import brain from "../assets/education/brain.png";
 import heart from "../assets/education/heart.png";
 import lung from "../assets/education/lungs.png";
@@ -28,60 +21,43 @@ import { TbLocation } from "react-icons/tb";
 import dsa from "../assets/education/dsa.png";
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 function Departement() {
-	const customBlobShape = (
-		<svg width='0' height='0'>
-			<defs>
-				<clipPath id='custom-clip-path' transform='scale(5)'>
-					<path
-						fill='#F2F4F8'
-						d='M49.4,-49.1C55.7,-43.1,46.7,-21.5,44.4,-2.3C42.1,17,46.5,33.9,40.2,41.1C33.9,48.2,17,45.5,3.5,42C-9.9,38.4,-19.8,34.1,-30.9,26.9C-42,19.8,-54.4,9.9,-60.8,-6.4C-67.2,-22.7,-67.7,-45.5,-56.6,-51.5C-45.5,-57.5,-22.7,-46.9,-0.6,-46.3C21.5,-45.7,43.1,-55.1,49.4,-49.1Z'
-						transform='translate(100 100)'
-					/>
-				</clipPath>
-			</defs>
-		</svg>
-	);
-
-	const category = [
-		{ icon: <GiBrain />, title: "Neurology" },
-		{ icon: <FaStethoscope />, title: "Pediatrics" },
-		{ icon: <FaUserDoctor />, title: "Dermatology" },
-		{ icon: <LiaSyringeSolid />, title: "Anesthesia" },
-	];
-
 	const searchCategory = [
 		{
 			id: 1,
 			icon: <RiApps2Line />,
 			name: "All",
-			link: "/departements",
 		},
 		{
 			id: 2,
-			icon: <GiMicroscope />,
-			name: "Courses",
-			link: "/courses",
+			icon: <FaUserDoctor />,
+			name: "Medical doctor",
 		},
 		{
 			id: 3,
-			icon: <GiTestTubes />,
-			name: "Lab experiments",
-			link: "/experiments",
+			icon: <FaXRay />,
+			name: "Radiology",
 		},
 		{
 			id: 4,
-			icon: <BsPatchQuestion />,
-			name: "Questions",
-			link: "/questions",
+			icon: <MdOutlineLocalPharmacy />,
+			name: "Pharmacy",
 		},
 		{
 			id: 5,
-			icon: <GiArchiveResearch />,
-			name: "Researches",
-			link: "/researches",
+			icon: <RiNurseLine />,
+			name: "Nursing",
+		},
+		{
+			id: 6,
+			icon: <TbDental />,
+			name: "Dental doctor",
+		},
+		{
+			id: 7,
+			icon: <RiPsychotherapyLine />,
+			name: "Therapy",
 		},
 	];
 	const diagnostic = [
@@ -94,61 +70,72 @@ function Departement() {
 		{ icon: anest, title: "Scissors" },
 		{ icon: anest, title: "Scissors" },
 	];
-	const recommendedCourses = [
+	const Courses = [
 		{
 			id: 1,
-			title: "Course 1",
+			title: "Course title 1",
 			image: dsa,
 			likes: 4,
+			dep: 1,
 		},
 		{
 			id: 2,
-			title: "Course 1",
+			title: "Course title 2",
 			image: dsa,
 			likes: 4,
+			dep: 2,
 		},
 		{
 			id: 3,
-			title: "Course 1",
+			title: "Course title 3",
 			image: dsa,
 			likes: 4,
+			dep: 3,
 		},
 		{
 			id: 4,
-			title: "Course 1",
+			title: "Course title 4",
 			image: dsa,
 			likes: 4,
+			dep: 4,
 		},
 		{
 			id: 5,
-			title: "Course 2",
+			title: "Course title 5",
 			image: dsa,
 			likes: 3,
+			dep: 5,
 		},
 		{
 			id: 6,
-			title: "Course 2",
+			title: "Course title 6",
 			image: dsa,
 			likes: 3,
+			dep: 6,
 		},
 		{
 			id: 7,
-			title: "Course 2",
+			title: "Course title 7",
 			image: dsa,
 			likes: 3,
+			dep: 7,
 		},
 		{
 			id: 8,
-			title: "Course 2",
+			title: "Course title 8",
 			image: dsa,
 			likes: 3,
+			dep: 8,
 		},
 	];
 	const [selectedItem, setSelectedItem] = useState(null);
+	const [filteredCourse, setFilteredCourse] = useState(null);
 	const [isSearchActive, setIsSearchActive] = useState(false);
 
 	const data = ["balcha", "sarbet", "pharma", "tarik"];
 	const [filteredPlaces, setFilteredPlaces] = useState([]);
+	const history = useHistory();
+
 	const filterHandler = (e) => {
 		const searchWord = e.target.value;
 
@@ -158,9 +145,20 @@ function Departement() {
 			setFilteredPlaces(data);
 		}
 	};
-	const handleItemClick = (item) => {
-		setSelectedItem(item);
+	const handleCourseClick = (course) => {
+		history.push(`/course/${course.id}`, { course: course });
 	};
+	const filterdepartement = (value) => {
+		if (value === 1) {
+			setFilteredCourse(null);
+			setSelectedItem(value);
+		} else {
+			const filteredCourses = Courses.filter((course) => course.dep === value);
+			setFilteredCourse(filteredCourses);
+			setSelectedItem(value);
+		}
+	};
+
 	return (
 		<div className='department'>
 			<div className='header'>
@@ -180,7 +178,7 @@ function Departement() {
 				<div className='first-col'>
 					<h1>
 						<span style={{ color: "rgb(0, 56, 127)" }}>
-							Look for departements{" "}
+							Look for departements
 						</span>
 						and the choise of your liking
 					</h1>
@@ -189,9 +187,9 @@ function Departement() {
 						non. Iusto optio velit deserunt quos dolor? Recusandae voluptatibus
 						tempora officiis temporibus soluta laborum qui. Voluptat
 					</p>
-					<a href='/login'>
+					<a href='/courses'>
 						<span>
-							<h3> Get Started </h3>
+							<h3> Get Started</h3>
 						</span>
 					</a>
 				</div>
@@ -204,7 +202,7 @@ function Departement() {
 			<div className='category-container'>
 				<section className='search'>
 					<p>
-						<h2>12 </h2> Courses
+						<h2>112 </h2> Courses
 					</p>
 					<div className='search-bar'>
 						<input
@@ -231,7 +229,7 @@ function Departement() {
 						<div className='search-results'>
 							{filteredPlaces.length === 0 && (
 								<span>
-									<Link to='nth'>
+									<Link to='near'>
 										<TbLocation
 											style={{
 												fontSize: "30px",
@@ -252,7 +250,6 @@ function Departement() {
 									className='search-item'
 									target=''
 									key={value._id}
-									onClick={() => handleItemClick(value)}
 								>
 									<div className='result-name'>
 										<span>
@@ -276,27 +273,43 @@ function Departement() {
 				</section>
 				<div className='category'>
 					{searchCategory.map((item) => (
-						<p
-							className={`category-map ${
-								selectedItem?.id === item.id ? "selected" : ""
+						<div
+							className={`category-map ${selectedItem === item.id ? "selected" : ""
 							}`}
 							key={item.id}
+							onClick={() => filterdepartement(item.id)}
 						>
 							<span>{item.icon}</span>
 							<p>{item.name}</p>
-						</p>
+						</div>
 					))}
 				</div>
 				<section className='list'>
 					<div className='course-container' id='slider3'>
 						<div className='course-grid'>
-							{recommendedCourses.map((course) => (
-								<div className='course-item' key={course.id}>
-									<img src={course.image} alt={course.title} />
-									<h3>{course.title}</h3>
-									<p> Rating : {course.likes} </p>
-								</div>
-							))}
+							{filteredCourse === null
+								? Courses.map((course) => (
+										<div
+											className='course-item'
+											key={course.id}
+											onClick={() => handleCourseClick(course)}
+										>
+											<img src={course.image} alt={course.title} />
+											<h3>{course.title}</h3>
+											<p> Rating : {course.likes} </p>
+										</div>
+								  ))
+								: filteredCourse.map((course) => (
+										<div
+											className='course-item'
+											key={course.id}
+											onClick={() => handleCourseClick(course)}
+										>
+											<img src={course.image} alt={course.title} />
+											<h3>{course.title}</h3>
+											<p> Rating : {course.likes} </p>
+										</div>
+								  ))}
 						</div>
 					</div>
 				</section>
@@ -326,7 +339,7 @@ function Departement() {
 					))}
 				</div>
 			</div>
-			
+
 			<footer className='footer'>
 				<div className='footer-column'>
 					<div className='logo'>

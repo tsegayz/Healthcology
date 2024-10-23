@@ -79,7 +79,6 @@ function Lab() {
 						</div>
 					</ul>
 				</div>
-
 				<section className='flask'>
 					<img src={flask} alt='back' className='flask-image' />
 					<div className='first-col'>

@@ -169,7 +169,7 @@ function Courses() {
 				</div>
 				<div className='text'>
 					<h3> Courses</h3>
-					<p> Enquire topics </p>
+					<p> Enquire topics found here look for what you need</p>
 				</div>
 			</section>
 

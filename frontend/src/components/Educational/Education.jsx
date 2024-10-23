@@ -90,21 +90,25 @@ function Education() {
 			icon: <IoMdPerson />,
 			title: "lab Exercises",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ad! Possimus, dolorum. Amet debitis aspernatur aliquam temporibus quidem unde asperior",
+			link: '/lab'
 		},
 		{
 			icon: <BsQuestionCircleFill />,
 			title: "Exam questions",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ad! Possimus, dolorum. Amet debitis aspernatur aliquam temporibus quidem unde asperior",
+			link: '/exam'
 		},
 		{
 			icon: <VscNotebook />,
 			title: "Course material",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ad! Possimus, dolorum. Amet debitis aspernatur aliquam temporibus quidem unde asperior",
+			link: '/courses'
 		},
 		{
 			icon: <FaResearchgate />,
 			title: "Researches ",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ad! Possimus, dolorum. Amet debitis aspernatur aliquam temporibus quidem unde asperior",
+			link: 'research'
 		},
 	];
 
@@ -456,13 +460,13 @@ function Education() {
 				<div className='grid-container'>
 					{offer.map((item, index) => {
 						return (
-							<div className='offer-item' key={index}>
+							<Link className='offer-item' key={index} to = {item.link}>
 								<span> {item.icon} </span>
 								<div className='offer'>
 									<h3> {item.title} </h3>
 									<p> {item.desc} </p>
 								</div>
-							</div>
+							</Link>
 						);
 					})}
 				</div>

@@ -11,6 +11,7 @@ import Departement from "./components/Educational/Departement";
 import Lab from "./components/Educational/Lab";
 import About from "./components/About";
 import SignUp from "./components/Signup";
+import Course from "./components/Educational/Course";
 
 function App() {
 	return (
@@ -36,8 +37,14 @@ function App() {
 						<Route exact path='/education'>
 							<Education/>
 						</Route>
+						<Route exact path='/lab'>
+							<Lab/>
+						</Route>
 						<Route exact path='/courses'>
 							<Courses/>
+						</Route>
+						<Route exact path='/course/:itemId'>
+							<Course/>
 						</Route>
 						<Route exact path='/departements'>
 							<Departement/>
