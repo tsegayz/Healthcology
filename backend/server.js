@@ -1,26 +1,22 @@
-const mongoose = require("mongoose");
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 
-// used for the databae that is hosted on mongo atlas
-const DB = process.env.DATABASE.replace(
+const app = express();
+const PORT = process.env.PORT;
+
+// MongoDB connection
+const dbURI = process.env.DATABASE.replace(
 	"<PASSWORD>",
 	process.env.DATABASE_PASSWORD
 );
-
-//////////////////////////////////////////////////
 mongoose
-	.connect(process.env.DATABASE_LOCAL, {
-		useNewUrlParser: true, // corrected option name
-		useUnifiedTopology: true,
-		useCreateIndex: true,
-	})
-	.then(() => console.log("DB connection successful"))
+	.connect(dbURI)
+	.then(() => console.log("DB connection successful!"))
 	.catch((err) => console.error("DB connection error:", err));
-const app = require("./app");
 
-const port = 5000;
-app.listen(port, () => {
-	console.log(`Running on port ${port}....`);
+app.listen(PORT, () => {
+	console.log(`Server is running on port ${PORT}`);
 });
