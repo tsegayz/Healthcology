@@ -1,8 +1,10 @@
 import User from "./../models/userModel.js"; 
 
+
+
 export async function getAllUsers(req, res, next) {
     try {
-        const users = await User.find();
+        const users = await User.find(); // Fetch users from your database
         res.status(200).json({
             status: "success",
             results: users.length,
@@ -15,7 +17,7 @@ export async function getAllUsers(req, res, next) {
             status: "fail",
             message: err.message,
         });
-        next(err); 
+        next(err);
     }
 }
 

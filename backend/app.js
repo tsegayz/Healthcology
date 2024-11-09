@@ -9,8 +9,6 @@ const __dirname = join(__filename, '..');
 
 const app = express();
 
-console.log(process.env.NODE_ENV);
-
 if (process.env.NODE_ENV === "development") {
 	app.use(morgan("dev"));
 }
